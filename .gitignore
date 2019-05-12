@@ -1,4 +1,6 @@
 web/node_modules/
+**/.DS_Store
+**/yarn.lock
 
 #Ignored Server files
 # Binaries for programs and plugins
