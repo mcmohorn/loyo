@@ -5,6 +5,8 @@ web/package-lock.json
 
 **/.idea/*
 
+server/vendor/
+
 #Ignored Server files
 # Binaries for programs and plugins
 *.exe
