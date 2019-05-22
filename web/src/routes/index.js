@@ -1,10 +1,12 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route } from 'react-router';
 import App from '../container/App';
 import RegisterPage from '../components/register';
+import LoginPage from '../components/login';
 
 export default (
-  <Route path='/' component={App}>
-    <Route path='register' component={RegisterPage} />
-  </Route>
+  <App>
+     <Route path='/register' component={RegisterPage} />
+     <Route path='/login' component={LoginPage} />
+  </App>
 );

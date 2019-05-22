@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"loyo/config/db"
-	"loyo/data"
+	"github.com/mcmohorn/loyo/server/data/"
+	"github.com/mcmohorn/loyo/server/config/db"
 	"net/http"
 
 	jwt "github.com/dgrijalva/jwt-go"
@@ -36,7 +36,7 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var result data.User
-	err = collection.FindOne(context.TODO(), bson.D{{"username", user.Username}}).Decode(&result)
+	err = collection.FindOne(context.TODO(), bson.D{{"username", user.Email}}).Decode(&result)
 
 	if err != nil {
 		if err.Error() == "mongo: no documents in result" {

@@ -3,6 +3,7 @@ package data
 // User is the struct for the user data type
 type User struct {
 	Email        string        `json:"email,required"`
+	Password string `json:"password"`
 	Name         string        `json:"name,omitempty"`
 	Phone        uint64        `json:"phone"`
 	Transactions []Transaction `json:"transactions,omitempty"`
@@ -47,4 +48,16 @@ type Address struct {
 type ResponseResult struct {
 	Error  string `json:"error"`
 	Result string `json:"result"`
+}
+
+type Block struct {
+	Index     int
+	Timestamp string
+	BPM       int
+	Hash      string
+	PrevHash  string
+}
+
+type Message struct {
+	BPM int
 }
