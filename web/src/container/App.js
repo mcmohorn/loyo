@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../App.scss';
 
 class App extends Component {
   componentDidMount(){
@@ -7,8 +8,8 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <h3>User Authentication System</h3>
+      <div className="App">
+        <div className="appHeader"><h3>Loyo</h3></div>
         {this.props.children}
       </div>
     );

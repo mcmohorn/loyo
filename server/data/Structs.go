@@ -7,6 +7,7 @@ type User struct {
 	Name         string        `json:"name,omitempty"`
 	Phone        uint64        `json:"phone"`
 	Transactions []Transaction `json:"transactions,omitempty"`
+	Token string `json:"token,omitempty"`
 }
 
 // Business is the struct for the business data type

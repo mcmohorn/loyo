@@ -11,6 +11,7 @@ function success(message) {
 }
 
 function error(message) {
+    alert(message);
     return { type: alertConstants.ERROR, message };
 }
 

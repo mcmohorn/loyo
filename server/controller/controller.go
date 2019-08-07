@@ -6,9 +6,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"github.com/mcmohorn/loyo/server/data/"
-	"github.com/mcmohorn/loyo/server/config/db"
 	"net/http"
+
+	"github.com/mcmohorn/loyo/server/config/db"
+	"github.com/mcmohorn/loyo/server/data"
 
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/mongodb/mongo-go-driver/bson"
@@ -36,7 +37,7 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var result data.User
-	err = collection.FindOne(context.TODO(), bson.D{{"username", user.Email}}).Decode(&result)
+	err = collection.FindOne(context.TODO(), bson.D{{"email", user.Email}}).Decode(&result)
 
 	if err != nil {
 		if err.Error() == "mongo: no documents in result" {
@@ -65,8 +66,8 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	res.Result = "User already exists"
-	json.NewEncoder(w).Encode(res)
+	w.WriteHeader(http.StatusBadRequest)
+	w.Write([]byte("User exists"))
 	return
 }
 
@@ -88,29 +89,30 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	var result data.User
 	var res data.ResponseResult
 
-	err = collection.FindOne(context.TODO(), bson.D{{"username", user.Username}}).Decode(&result)
+	err = collection.FindOne(context.TODO(), bson.D{{"email", user.Email}}).Decode(&result)
 
 	if err != nil {
-		res.Error = "Invalid username"
-		json.NewEncoder(w).Encode(res)
+		w.WriteHeader(http.StatusBadRequest)
+		w.Write([]byte("Invalid username"))
 		return
 	}
 
 	err = bcrypt.CompareHashAndPassword([]byte(result.Password), []byte(user.Password))
 
 	if err != nil {
-		res.Error = "Invalid password"
-		json.NewEncoder(w).Encode(res)
+		w.Header().Set("content-type","text")
+		w.WriteHeader(http.StatusBadRequest)
+		w.Write([]byte("Invalid password"))
 		return
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"username":  result.Username,
-		"firstname": result.FirstName,
-		"lastname":  result.LastName,
+		"email": result.Email,
+		//"firstname": result.FirstName,
+		//"lastname":  result.LastName,
 	})
 
-	tokenString, err := token.SignedString([]byte("secret"))
+	tokenString, err := token.SignedString([]byte("dsAugwASDYHGao96598A1kgPjhg"))
 
 	if err != nil {
 		res.Error = "Error while generating token,Try again"
@@ -138,9 +140,9 @@ func ProfileHandler(w http.ResponseWriter, r *http.Request) {
 	var result data.User
 	var res data.ResponseResult
 	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-		result.Username = claims["username"].(string)
-		result.FirstName = claims["firstname"].(string)
-		result.LastName = claims["lastname"].(string)
+		result.Email = claims["email"].(string)
+		//result.FirstName = claims["firstname"].(string)
+		//result.LastName = claims["lastname"].(string)
 
 		json.NewEncoder(w).Encode(result)
 		return

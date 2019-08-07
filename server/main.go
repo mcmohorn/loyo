@@ -6,30 +6,31 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"github.com/davecgh/go-spew/spew"
-	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
 	"io"
 	"log"
 	"net"
 	"net/http"
-	"github.com/mcmohorn/loyo/server/data"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/davecgh/go-spew/spew"
+	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
+	"github.com/mcmohorn/loyo/server/controller"
+	"github.com/mcmohorn/loyo/server/data"
 )
 
 func UserProfileEndPoint(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "not implemented yet !")
 }
 
-
 func RegisterUserEndPoint(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "not implemented yet !")
+	controller.RegisterHandler(w, r)
 }
 
 func LoginUserEndPoint(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "not implemented yet !")
+	controller.LoginHandler(w, r)
 }
 
 func GetBlockchainEndPoint(w http.ResponseWriter, r *http.Request) {
@@ -80,13 +81,12 @@ func respondWithJSON(w http.ResponseWriter, r *http.Request, code int, payload i
 var Blockchain []data.Block
 var bcServer chan []data.Block
 
-
-func run() error{
+func run() error {
 	r := createMuxRouter()
 
 	port := os.Getenv("SERVER_PORT")
 	appname := os.Getenv("APP_NAME")
-	log.Println("Starting "+appname+" on port "+ port)
+	log.Println("Starting " + appname + " on port " + port)
 	s := &http.Server{
 		Addr:           ":" + port,
 		Handler:        r,
@@ -117,24 +117,23 @@ func main() {
 
 	log.Fatal(run())
 
-
 	// start TCP and serve TCP server
-	server, err := net.Listen("tcp", ":"+os.Getenv("ADDR"))
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer server.Close()
-
-	//
-	for {
-		conn, err := server.Accept()
+	/*
+		server, err := net.Listen("tcp", ":"+os.Getenv("ADDR"))
 		if err != nil {
 			log.Fatal(err)
 		}
-		go handleConn(conn)
-	}
+		defer server.Close()
 
-
+		//
+		for {
+			conn, err := server.Accept()
+			if err != nil {
+				log.Fatal(err)
+			}
+			go handleConn(conn)
+		}
+	*/
 
 }
 

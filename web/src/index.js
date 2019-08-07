@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import configureStore from './store/configureStore';
+import {store} from './helpers/store';
 import routes from './routes';
 import './index.css';
-
-const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
