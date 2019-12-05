@@ -165,6 +165,7 @@
     "github.com/mongodb/mongo-go-driver/bson",
     "go.mongodb.org/mongo-driver/mongo",
     "go.mongodb.org/mongo-driver/mongo/options",
+    "go.mongodb.org/mongo-driver/mongo/readpref",
     "golang.org/x/crypto/bcrypt",
   ]
   solver-name = "gps-cdcl"

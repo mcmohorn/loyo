@@ -6,6 +6,7 @@ web/package-lock.json
 **/.idea/*
 
 server/vendor/
+server/.vscode/launch.json
 
 #Ignored Server files
 # Binaries for programs and plugins

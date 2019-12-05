@@ -1,6 +1,4 @@
 export * from './user.actions';
-export * from './alert.actions'
-
-export const REGISTER_USER = 'REGISTER_USER';
-export const REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS';
-export const REGISTER_USER_ERROR = 'REGISTER_USER_ERROR';
+export * from './alert.actions';
+export * from './account.actions';
+export * from './business.actions';

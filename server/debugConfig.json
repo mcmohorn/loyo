@@ -1,0 +1,7 @@
+{
+  "configurations": [{
+    "mode": "debug",
+    "name": "my-config",
+    "cwd": "/server"
+}]
+}

@@ -1,5 +1,6 @@
 import { userConstants } from '../constants';
 import { userService } from '../services';
+import { accountService } from '../services';
 import { alertActions } from './';
 import { history } from '../helpers';
 
@@ -7,13 +8,58 @@ export const userActions = {
     login,
     logout,
     register,
-    getAll
+    getAll,
+    getProfile,
+    getTransactions,
 };
 
-function register(username, password) {
+function getProfile(token) {
+
     return dispatch => {
-        dispatch(request({ username }));
-        userService.register(username, password)
+        dispatch(request({ token }));
+        userService.getProfile(token)
+            .then(
+                user => {
+                    dispatch(success(user));
+                },
+                error => {
+                    dispatch(failure(error));
+                    // dispatch(alertActions.error(error));
+                }
+            );
+    };
+
+    function request(t) { return { type: userConstants.GET_PROFILE_REQUEST, t } }
+    function success(user) { return { type: userConstants.GET_PROFILE_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.GET_PROFILE_FAILURE, error } }
+}
+
+
+function getTransactions(user, publicToken, accountId) {
+
+    return dispatch => {
+        dispatch(request({ user }));
+        userService.getTransactions(user)
+            .then(
+                user => {
+                    dispatch(success(user));
+                },
+                error => {
+                    dispatch(failure(error));
+                    //dispatch(alertActions.error(error));
+                }
+            );
+    };
+
+    function request(u) { return { type: userConstants.GET_TRANSACTIONS_REQUEST, u } }
+    function success(u) { return { type: userConstants.GET_TRANSACTIONS_SUCCESS, u } }
+    function failure(error) { return { type: userConstants.GET_TRANSACTIONS_FAILURE, error } }
+}
+
+function register(newUser) {
+    return dispatch => {
+        dispatch(request({ uesrname: newUser.username }));
+        userService.register(newUser)
             .then(
                 user => {
                     dispatch(success(user));
@@ -46,7 +92,8 @@ function login(username, password) {
     };
 
     function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }
-    function success(user) { return { type: userConstants.LOGIN_SUCCESS, user } }
+    function success(user) {
+      return { type: userConstants.LOGIN_SUCCESS, user: JSON.parse(user) } }
     function failure(error) { return { type: userConstants.LOGIN_FAILURE, error } }
 }
 

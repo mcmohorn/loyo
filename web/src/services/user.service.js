@@ -1,12 +1,56 @@
-import config from 'config';
-import { authHeader } from '../helpers';
+
+import { authHeader , responseHandler } from '../helpers';
+
 
 export const userService = {
     login,
     logout,
     register,
-    getAll
+    getAll,
+    getProfile,
+    getTransactions,
 };
+
+function getTransactions(user) {
+
+  if (!user || !user.token) return Promise.reject('No token provided');
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+          'Authorization': user.token,
+          'Content-Type': 'application/json'
+        },
+    };
+
+    return fetch(`/balances`, requestOptions)
+        .then(responseHandler.handle)
+        .then(user => {
+            console.log('got result', user);
+
+
+            return user;
+        });
+}
+
+
+
+function getProfile(tok) {
+  if (!tok) return Promise.reject('No token provided');
+    const requestOptions = {
+        method: 'GET',
+        'Authorization': tok,
+        headers: { 'Content-Type': 'application/json' },
+    };
+
+    return fetch(`/user`, requestOptions)
+        .then(responseHandler.handle)
+        .then(user => {
+          console.log('got user profile', user);
+
+
+            return user;
+        });
+}
 
 function login(username, password) {
     const requestOptions = {
@@ -16,25 +60,26 @@ function login(username, password) {
     };
 
     return fetch(`/login`, requestOptions)
-        .then(handleResponse)
+        .then(responseHandler.handle)
         .then(user => {
-          console.log('logged in user!', user);
+          console.log('logged in user!', user.token);
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('token', user.token);
 
             return user;
         });
 }
 
-function register(username, password) {
+function register(newUser) {
+  console.log('new user is ', newUser);
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: username, password })
+        body: JSON.stringify({ email: newUser.username, password: newUser.password, name: newUser.name })
     };
 
-    return fetch(`/register`, requestOptions)
-        .then(handleResponse)
+    return fetch(`/user`, requestOptions)
+        .then(responseHandler.handle)
         .then(user => {
           console.log('regiseterd user', user);
             // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -55,27 +100,5 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
-}
-
-function handleResponse(response) {
-    return response.text().then(text => {
-      let data = text;
-      console.log('text is ', text);
-
-        if (!response.ok) {
-            if (response.status === 401) {
-                // auto logout if 401 response returned from api
-                logout();
-                window.location.reload(true);
-            }
-
-            //const error = (data && data.message) || response.statusText;
-            return Promise.reject(text);
-        } else {
-          const data = text && JSON.parse(text);
-        }
-
-        return data;
-    });
+    return fetch(`/users`, requestOptions).then(responseHandler.handle);
 }

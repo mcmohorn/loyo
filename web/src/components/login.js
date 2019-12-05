@@ -8,7 +8,8 @@ class Login extends Component {
         super(props);
 
         // reset login status
-        this.props.dispatch(userActions.logout());
+        //console.log('logging out because we are constructing login page');
+        //this.props.dispatch(userActions.logout());
 
         this.state = {
             username: '',
@@ -22,6 +23,12 @@ class Login extends Component {
     const { name, value } = e.target;
     this.setState({ [name]: value });
 }
+componentWillReceiveProps(nextProps) {
+    console.log('receing props.redirect', nextProps.redirect);
+    if (nextProps.redirect && nextProps.redirect !== this.state.redirect) {
+        this.setState({ redirect: nextProps.redirect });
+    }
+}
 
 handleSubmit = async(e) => {
     e.preventDefault();
@@ -30,17 +37,17 @@ handleSubmit = async(e) => {
     const { username, password } = this.state;
     const { dispatch } = this.props;
     if (username && password) {
-      dispatch(userActions.login(username, password))
+      dispatch(userActions.login(username, password));
     }
 }
 renderRedirect = () => {
-    if (this.props.redirect) {
-      return <Redirect to='/' />
+    if (this.state.redirect && this.state.redirect !== '/login') {
+      console.log('redirecting from login page to ', this.state.redirect);
+      return <Redirect to={this.state.redirect} />
     }
   }
 
   render() {
-
     const { loggingIn } = this.props;
       const {submitted, password, username} = this.state;
     return (
@@ -81,7 +88,7 @@ renderRedirect = () => {
     )
   }
 }
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
     const { loggingIn, redirect } = state.auth;
     return {
         loggingIn,

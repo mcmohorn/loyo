@@ -1,0 +1,3882 @@
+{
+    "request_id": "0j3zoIUYJjyQPm7",
+    "accounts": [
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "balances": {
+                "available": 1057.66,
+                "current": 1232.58,
+                "limit": 0,
+                "iso_currency_code": "USD",
+                "unofficial_currency_code": ""
+            },
+            "mask": "0015",
+            "name": "Select Checking",
+            "official_name": "Select Checking",
+            "subtype": "checking",
+            "type": "depository",
+            "verification_status": ""
+        },
+        {
+            "account_id": "gLpxZMrZ7jUL1OOJPn6Qt5yyB4VrwrcqJeVxb",
+            "balances": {
+                "available": 0,
+                "current": 1891.71,
+                "limit": 0,
+                "iso_currency_code": "USD",
+                "unofficial_currency_code": ""
+            },
+            "mask": "9280",
+            "name": "Checkline Reserve",
+            "official_name": "Checkline Reserve",
+            "subtype": "loan",
+            "type": "loan",
+            "verification_status": ""
+        },
+        {
+            "account_id": "7eDyqVQq4OtKmbbOA9j8hKqq7d0wDwfQeVLBY",
+            "balances": {
+                "available": 0,
+                "current": 7333.89,
+                "limit": 0,
+                "iso_currency_code": "USD",
+                "unofficial_currency_code": ""
+            },
+            "mask": "9524",
+            "name": "Retail Loan",
+            "official_name": "Retail Loan",
+            "subtype": "loan",
+            "type": "loan",
+            "verification_status": ""
+        }
+    ],
+    "item": {
+        "available_products": [
+            "balance"
+        ],
+        "billed_products": [
+            "auth",
+            "transactions"
+        ],
+        "error": {
+            "request_id": "",
+            "error_type": "",
+            "error_code": "",
+            "error_message": "",
+            "display_message": "",
+            "StatusCode": 0
+        },
+        "institution_id": "ins_110019",
+        "item_id": "yJmdjkKjqEFJZ77VwgNzuYnKL70jXJsOmXAw8",
+        "webhook": ""
+    },
+    "transactions": [
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 46.65,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Supermarkets and Groceries"
+            ],
+            "category_id": "19047000",
+            "date": "2019-08-15",
+            "location": {
+                "address": "3500 Roxboro St A Ste",
+                "city": "Durham",
+                "lat": 36.037715,
+                "lon": -78.892505,
+                "region": "NC",
+                "store_number": "260885",
+                "postal_code": "27704",
+                "country": ""
+            },
+            "name": "Food Lion",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "NzqE8oj8kXI4Bmmbe6nNTJqDKwpQd7HRjekeZ",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 9.87,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2019-08-15",
+            "location": {
+                "address": "1129 Roxboro St",
+                "city": "Durham",
+                "lat": 36.001822,
+                "lon": -78.893681,
+                "region": "NC",
+                "store_number": "4514",
+                "postal_code": "27701",
+                "country": ""
+            },
+            "name": "McDonald's",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Yz3mZQLZqoIZa88PABNJs51pzK64gYFQvkbkv",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 15.2,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Convenience Stores"
+            ],
+            "category_id": "19015000",
+            "date": "2019-08-15",
+            "location": {
+                "address": "",
+                "city": "Durham",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 STAR MINI MART",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "ewX49z097buwLYYa14dVc5DrZoEaQbFdBmKmp",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 376.1,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Third Party",
+                "Venmo"
+            ],
+            "category_id": "21010001",
+            "date": "2019-08-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Venmo",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "Braintree",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "pkP9qL6q7VcQvppzLO47u4MbEpPZeaUJYE8EV",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 164.4,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Telecommunication Services"
+            ],
+            "category_id": "18063000",
+            "date": "2019-08-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Verizon Wireless",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "XzR1Q56QPoIaepprVx7NsM9XZOBAywC4EAnAm",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 500,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-08-14",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE MOBILE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "z87wrAkrBEf85vv76ea4Uw8AQrp5d6FOe0Q0Q",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -500,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Deposit",
+                "Check"
+            ],
+            "category_id": "21007001",
+            "date": "2019-08-14",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Mobile Check Deposit",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "m3PbDdZD78u3KppEoXDMSLpAz9ZbYPFMbgPgj",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 126.61,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Utilities"
+            ],
+            "category_id": "18068000",
+            "date": "2019-08-13",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "DUKE ENERGY SE WEB_PAY **********1919",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "ddBrn5vnmjHQ6NNPVXxzuL4j5R0rQwFbYXRX6",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 30.4,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants"
+            ],
+            "category_id": "13005000",
+            "date": "2019-08-13",
+            "location": {
+                "address": "",
+                "city": "Greensboro",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 PITA DELITE BATTLEGROU",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "wa7nvy3v1EFae55PQYXVswMXrnmeQOFLQ0b0B",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 6.73,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Travel",
+                "Gas Stations"
+            ],
+            "category_id": "22009000",
+            "date": "2019-08-12",
+            "location": {
+                "address": "",
+                "city": "Greensboro",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "BP#9099888IRVIN 2009 N ELM STREET GREENSBORO N 389171",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "qAaVBDLBEgcQ0JJNLBEruYM357wO8NSJdmMmR",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 100,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Debit"
+            ],
+            "category_id": "21006000",
+            "date": "2019-08-12",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "FIRST CITIZENS 16800 STATESVILLHUNTERSVILLENC A105",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "DzEZ8oP864Ib3VVoyjg9UOPVwMZ6a5UZ5xrxB",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -300,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Deposit",
+                "Check"
+            ],
+            "category_id": "21007001",
+            "date": "2019-08-12",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Mobile Check Deposit",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "6pE3PVoP47feR77dM6O8ie861gEBXaCa8grgO",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -200,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Deposit",
+                "Check"
+            ],
+            "category_id": "21007001",
+            "date": "2019-08-12",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Mobile Check Deposit",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Lz1O8ov8yYILPMMe4bJ8tEYgpMyrNwc0qbQb3",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 52.2,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants"
+            ],
+            "category_id": "13005000",
+            "date": "2019-08-12",
+            "location": {
+                "address": "",
+                "city": "Davidson",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 SABI ASIAN BISTRO",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "1pADwEowRmf5N77gX4EOu3d94V0J8aTmPzZzd",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 9.23,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Pharmacies"
+            ],
+            "category_id": "19043000",
+            "date": "2019-08-12",
+            "location": {
+                "address": "",
+                "city": "Durham",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 TRIANGLE PHARMACY ACE",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "PzxQmo4mvaIayJJz81qNsndMeDP367Im9060v",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 300,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-08-09",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE ONLINE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Bz6J4pD4dOIqDbbABNzXso3OdwvgJPi9BPXPr",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 18.11,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2019-08-09",
+            "location": {
+                "address": "1805 N Harrison Ave",
+                "city": "Cary",
+                "lat": 35.8298,
+                "lon": -78.769165,
+                "region": "NC",
+                "store_number": "11523",
+                "postal_code": "27513",
+                "country": ""
+            },
+            "name": "McDonald's",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "3pgPLVoLbNf8Zvv9oemXU80xmjgEPJIK13k3r",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 99.56,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Automotive",
+                "Maintenance and Repair"
+            ],
+            "category_id": "18006003",
+            "date": "2019-08-08",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "AUTO DEBIT TO PAY LOC",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "yJmdjkKjqEFJZ77VwgNzuYMaoDExvwSOQe8eL",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 2.5,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Bank Fees",
+                "ATM"
+            ],
+            "category_id": "10002000",
+            "date": "2019-08-07",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "ATM FEE 1 W/D @ 2.50",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "KzDV8oA834IQVJJ1rxe8uLJDprEdYeFQ9abad",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1864.97,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment",
+                "Rent"
+            ],
+            "category_id": "16002000",
+            "date": "2019-08-06",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Hamptons At RTP WEB PMTS DD3HJ5",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "kqr56XJ6MjTq3EEJpAyVsJZnrjOxQVHR5zYzR",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2140.1,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-08-06",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMDLYPAYS *G******1519",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "AzvxrVLrYRI6Vbbyq8QAh6ErKzJX31I6VryrM",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 16.18,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2019-08-05",
+            "location": {
+                "address": "4245 N Roxboro St",
+                "city": "Durham",
+                "lat": 36.04916,
+                "lon": -78.903616,
+                "region": "NC",
+                "store_number": "184",
+                "postal_code": "27704",
+                "country": ""
+            },
+            "name": "Cook Out",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "v4RQA3BADEtQxXX4zjJVuNMnE65DXyCmZxbxp",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 424,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Debit"
+            ],
+            "category_id": "21006000",
+            "date": "2019-08-02",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "FIRST CITIZENS TRANSFER INTERNET PCB",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "0pZLdezdRkf6xggbje0XhBpv3DgVLNUrpZzZv",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 16.93,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Food and Beverage"
+            ],
+            "category_id": "18021000",
+            "date": "2019-08-02",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "CA",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 DOORDASH*SUBWAY STRIPE.COM",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "rv6O31D3dRfQjppoN7JYuOM04axeQAUBXqMqK",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 26.8,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Convenience Stores"
+            ],
+            "category_id": "19015000",
+            "date": "2019-08-02",
+            "location": {
+                "address": "",
+                "city": "Durham",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 STAR MINI MART",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "jP8Zw5xwnjfPe445kO3QCbjQOqKrPntRxgog1",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 143,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Healthcare",
+                "Healthcare Services"
+            ],
+            "category_id": "14001000",
+            "date": "2019-07-31",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "4 PARK DR 4 PARK DR RESEARCH TRINC 0987T",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "azPv75K70oIZV88dryD0sjDEVAwomyFZ6JMJ4",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2870.69,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-07-31",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMNETPAYS *G******3119",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "4p0qDVODeZfbZPP7YBepUbO30RwP8Dtk3PpPE",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 663.85,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Insurance"
+            ],
+            "category_id": "18030000",
+            "date": "2019-07-30",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Central Insuranc VENDOR PMT #****6686",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "8pyKBVoB5nf5xaaNqn8ru5z8Mej0AgFyDbnbA",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -600,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-07-30",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "FUNDS TRANSFER FROM LOC ACCOUNT 000910002839280",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "JzN9YXkYB4ILDMMojQ0mtoydEJMzaeibyJRJv",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 12,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Bank Fees",
+                "Overdraft"
+            ],
+            "category_id": "10001000",
+            "date": "2019-07-30",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Overdraft Protection Transfer Fee",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "xxRp0Ky0PEtx8RRjd4Drtr8aRgNX7dtMdw8wy",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 415,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment",
+                "Credit Card"
+            ],
+            "category_id": "16001000",
+            "date": "2019-07-23",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "COMENITY PAY JT PHONE PYMT P**********7962",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Zz9qp5DpmQI0x8839NMVsLJm5YykxEFRmYdYE",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 32.81,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Food and Beverage"
+            ],
+            "category_id": "18021000",
+            "date": "2019-07-19",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "CA",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 DOORDASH*SINGAS FAMOUS STRIPE.COM",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "rv6O31D3dRfQjppoN7JYuOMxYRkzDDsBXqMX8",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 375.21,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Telecommunication Services"
+            ],
+            "category_id": "18063000",
+            "date": "2019-07-17",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Verizon Wireless",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "4p0qDVODeZfbZPP7YBepUbOwZdqB11Ck3Pp3e",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1500,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-07-16",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE ONLINE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "azPv75K70oIZV88dryD0sjDwdeZxMMUZ6JM6r",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 102.01,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Utilities"
+            ],
+            "category_id": "18068000",
+            "date": "2019-07-16",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "DUKE ENERGY SE WEB_PAY **********1919",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "xxRp0Ky0PEtx8RRjd4Drtr8NyjV0vvIMdw88r",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2541.38,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-07-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMNETPAYS *G******1519",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "JzN9YXkYB4ILDMMojQ0mtoyMvwr099fbyJRR3",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 72.02,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Automotive",
+                "Maintenance and Repair"
+            ],
+            "category_id": "18006003",
+            "date": "2019-07-09",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "AUTO DEBIT TO PAY LOC",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "8pyKBVoB5nf5xaaNqn8ru5zjx9ZmDDUyDbnnR",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 7.5,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Bank Fees",
+                "ATM"
+            ],
+            "category_id": "10002000",
+            "date": "2019-07-08",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "ATM FEE 3 W/DS @ 2.50",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Zz9qp5DpmQI0x8839NMVsLJyrZDMAAfRmYddK",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1875.11,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment",
+                "Rent"
+            ],
+            "category_id": "16002000",
+            "date": "2019-07-08",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Hamptons At RTP WEB PMTS JH4XF5",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "5pjB1zo1ONfr877qmOoXiAv4poVwPPIBvjaaj",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 31.48,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Recreation"
+            ],
+            "category_id": "17000000",
+            "date": "2019-07-08",
+            "location": {
+                "address": "",
+                "city": "Durham",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 BRIGS AT THE PARK",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "oK97P6wPXkhKAppeNz5rhnNdKqVpoofBwmNNg",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 800,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment",
+                "Credit Card"
+            ],
+            "category_id": "16001000",
+            "date": "2019-07-02",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "COMENITY PAY JT PHONE PYMT P**********5535",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "bz40ZgkZRjIedpp8BMo0i5QE4aBzvvUqnEYY4",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 424,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Debit"
+            ],
+            "category_id": "21006000",
+            "date": "2019-07-02",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "FIRST CITIZENS TRANSFER INTERNET PCB",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "gLpxZMrZ7jUL1OOJPn6Qt5yaoME7QQUqJeVV0",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 200,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-07-01",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE ONLINE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "7eDyqVQq4OtKmbbOA9j8hKqyxJrZNNfQeVLL9",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 8.01,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2019-06-28",
+            "location": {
+                "address": "4245 N Roxboro St",
+                "city": "Durham",
+                "lat": 36.04916,
+                "lon": -78.903616,
+                "region": "NC",
+                "store_number": "184",
+                "postal_code": "27704",
+                "country": ""
+            },
+            "name": "Cook Out",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Vz0Lo5moDxIDjzzy7QxNUd10LaZ3EEUrV1xxN",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2540.58,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-06-28",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMNETPAYS *G******3019",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "9pdk3Oo3e8fvAwwbrEm7tr6YZRyjJJId1eBB7",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -400,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Third Party",
+                "Venmo"
+            ],
+            "category_id": "21010001",
+            "date": "2019-06-27",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Venmo",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "Braintree",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "OzbR8or8A4Ia3eeKJxr9sA0PrKLY33I8ydRRw",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 109.92,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Supermarkets and Groceries"
+            ],
+            "category_id": "19047000",
+            "date": "2019-06-26",
+            "location": {
+                "address": "1908 Meredith Dr",
+                "city": "Durham",
+                "lat": 36.037715,
+                "lon": -78.892505,
+                "region": "NC",
+                "store_number": "260885",
+                "postal_code": "27704",
+                "country": ""
+            },
+            "name": "Food Lion",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Mz5M8E08KbIwNggVa0necoj30Q4AOOfMoZYYx",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 0.9,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Bank Fees",
+                "Foreign Transaction"
+            ],
+            "category_id": "10005000",
+            "date": "2019-06-21",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "HPBSIROKADU FOREIGN TRAN FEE BROVNIK 000001",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Rzmp8ox8dKIyVgg05Q4Nh8baYAg5mmCywx333",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 4.56,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Bank Fees",
+                "Foreign Transaction"
+            ],
+            "category_id": "10005000",
+            "date": "2019-06-21",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "HPBSIROKADU FOREIGN TRAN FEE BROVNIK 000001",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "EzB5noqnL4IxMyyqKX0ntYZRVBjrDDfpxmDDx",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 30.48,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants"
+            ],
+            "category_id": "13005000",
+            "date": "2019-06-21",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "HPBSIROKADU HPBSIROKADU DUBROVNIK 000001",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "nyagmwdm7rTykpp30mBQhmeonZwLbbUAzR99v",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 152.39,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants"
+            ],
+            "category_id": "13005000",
+            "date": "2019-06-21",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "HPBSIROKADU HPBSIROKADU DUBROVNIK 000001",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "QzOnboab07ImKggDZeOEhRDvy53MnnfE8Yrr1",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1500,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-06-18",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE MOBILE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "OzbR8or8A4Ia3eeKJxr9sA0PBM74LYU8ydRRO",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 500,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Third Party",
+                "Venmo"
+            ],
+            "category_id": "21010001",
+            "date": "2019-06-18",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Venmo",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "Braintree",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Mz5M8E08KbIwNggVa0necoj3vZwP4AFMoZYYz",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 4.92,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Bank Fees",
+                "Foreign Transaction"
+            ],
+            "category_id": "10005000",
+            "date": "2019-06-17",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "GAT SV DUJE 1 FOREIGN TRAN FEE LIT 11023",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Rzmp8ox8dKIyVgg05Q4Nh8bayM61g5Cywx33Y",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 164.39,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants"
+            ],
+            "category_id": "13005000",
+            "date": "2019-06-17",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "GAT SV DUJE 1 GAT SV DUJE 1 SPLIT 11023",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "QzOnboab07ImKggDZeOEhRDvLYQJ3MUE8YrrB",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 195.17,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Telecommunication Services"
+            ],
+            "category_id": "18063000",
+            "date": "2019-06-17",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Verizon Wireless",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "EzB5noqnL4IxMyyqKX0ntYZR3Q6EjrUpxmDDM",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2541.38,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-06-14",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMNETPAYS *G******1519",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "nyagmwdm7rTykpp30mBQhmeoNEJBwLcAzR99O",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 91.6,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Utilities"
+            ],
+            "category_id": "18068000",
+            "date": "2019-06-13",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "DUKE ENERGY SE WEB_PAY **********2019",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "8pyKBVoB5nf5xaaNqn8ru5zjpn1QZmFyDbnno",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 39.88,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Newsstands"
+            ],
+            "category_id": "19038000",
+            "date": "2019-06-12",
+            "location": {
+                "address": "",
+                "city": "Raleigh",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 CAROLINA ALE HOUSE RDU",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Zz9qp5DpmQI0x8839NMVsLJyQ87vDMCRmYddM",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1500,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-06-11",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE ONLINE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "oK97P6wPXkhKAppeNz5rhnNdMXP4VpUBwmNNa",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1952.13,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment",
+                "Rent"
+            ],
+            "category_id": "16002000",
+            "date": "2019-06-11",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Hamptons At RTP WEB PMTS XK0MC5",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "5pjB1zo1ONfr877qmOoXiAv4O5DrVwUBvjaa7",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1.6,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Manufacturing",
+                "Food and Beverage"
+            ],
+            "category_id": "18037005",
+            "date": "2019-06-11",
+            "location": {
+                "address": "2717 Western Byp",
+                "city": "Durham",
+                "lat": 35.982478,
+                "lon": -78.956532,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "27705",
+                "country": ""
+            },
+            "name": "PepsiCo",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "gLpxZMrZ7jUL1OOJPn6Qt5yaZmrJE7FqJeVVq",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 11.14,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Pharmacies"
+            ],
+            "category_id": "19043000",
+            "date": "2019-06-11",
+            "location": {
+                "address": "",
+                "city": "Durham",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 TRIANGLE PHARMACY ACE",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "bz40ZgkZRjIedpp8BMo0i5QENLZ9BzFqnEYY6",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 74.67,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Automotive",
+                "Maintenance and Repair"
+            ],
+            "category_id": "18006003",
+            "date": "2019-06-10",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "AUTO DEBIT TO PAY LOC",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "7eDyqVQq4OtKmbbOA9j8hKqyjLw3rZUQeVLL0",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 109.66,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants"
+            ],
+            "category_id": "13005000",
+            "date": "2019-06-10",
+            "location": {
+                "address": "234 Us Highway 158",
+                "city": "Littleton",
+                "lat": 36.43773,
+                "lon": -77.903952,
+                "region": "NC",
+                "store_number": "26",
+                "postal_code": "27850",
+                "country": ""
+            },
+            "name": "Piggly Wiggly",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Vz0Lo5moDxIDjzzy7QxNUd10QNvkZ3IrV1xxj",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 115.68,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Department Stores"
+            ],
+            "category_id": "19018000",
+            "date": "2019-06-10",
+            "location": {
+                "address": "",
+                "city": "Durham",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "TARGET T-2069 8 TARGET T-2069 82DURHAM NC 999999",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "9pdk3Oo3e8fvAwwbrEm7tr6YDBXOyjCd1eBB6",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 81.61,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Furniture and Home Decor"
+            ],
+            "category_id": "19027000",
+            "date": "2019-06-10",
+            "location": {
+                "address": "6910 Fayetteville Rd Ste 162",
+                "city": "Durham",
+                "lat": 35.902027,
+                "lon": -78.939734,
+                "region": "NC",
+                "store_number": "001",
+                "postal_code": "27713",
+                "country": ""
+            },
+            "name": "Williams-Sonoma",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "OzbR8or8A4Ia3eeKJxr9sA0PBM74LYU8ydRRV",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 5,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Bank Fees",
+                "ATM"
+            ],
+            "category_id": "10002000",
+            "date": "2019-06-07",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "ATM FEE 2 W/DS @ 2.50",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Mz5M8E08KbIwNggVa0necoj3vZwP4AFMoZYYB",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2100,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Deposit"
+            ],
+            "category_id": "21007000",
+            "date": "2019-06-06",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Customer Deposit",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "EzB5noqnL4IxMyyqKX0ntYZR3Q6EjrUpxmDD5",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 424,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Debit"
+            ],
+            "category_id": "21006000",
+            "date": "2019-06-03",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "FIRST CITIZENS TRANSFER INTERNET PCB",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Rzmp8ox8dKIyVgg05Q4Nh8bayM61g5Cywx331",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2541.38,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-05-31",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMNETPAYS *G******3119",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "QzOnboab07ImKggDZeOEhRDvLYQJ3MUE8YrrM",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 268.64,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Department Stores"
+            ],
+            "category_id": "19018000",
+            "date": "2019-05-28",
+            "location": {
+                "address": "6910  Fayetteville Rd  Ste 500",
+                "city": "Durham",
+                "lat": 35.902027,
+                "lon": -78.939734,
+                "region": "NC",
+                "store_number": "999999",
+                "postal_code": "27713",
+                "country": ""
+            },
+            "name": "Nordstrom",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "pkP9qL6q7VcQvppzLO47u4MPj8O35YtJYE88m",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 779.28,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service"
+            ],
+            "category_id": "18000000",
+            "date": "2019-05-28",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "THE HUB LTD 2921 D BATTLEGROUNGREENSBORO N 000004",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "nyagmwdm7rTykpp30mBQhmeoNEJBwLcAzR99a",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 42.75,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Food and Drink",
+                "Restaurants"
+            ],
+            "category_id": "13005000",
+            "date": "2019-05-28",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Yum Yums 1219 SPRING GARDENGREENSBORO N 825807",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "XzR1Q56QPoIaepprVx7NsM9B7Pq6vxu4EAnnk",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 2000,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-05-16",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE ONLINE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "NzqE8oj8kXI4Bmmbe6nNTJqp8ne3NYFRjekkn",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2971.26,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-05-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMNETPAYS *G******1519",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "z87wrAkrBEf85vv76ea4Uw8p9B4vgzuOe0QQL",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 342.76,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Third Party",
+                "Venmo"
+            ],
+            "category_id": "21010001",
+            "date": "2019-05-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Venmo",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "Braintree",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "ewX49z097buwLYYa14dVc5DEeBO0jKFdBmKK1",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 195.17,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Telecommunication Services"
+            ],
+            "category_id": "18063000",
+            "date": "2019-05-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Verizon Wireless",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Yz3mZQLZqoIZa88PABNJs516rmo9OnFQvkbbN",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 143,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Debit"
+            ],
+            "category_id": "21006000",
+            "date": "2019-05-09",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "COASTAL FCU 3039 CORNWALLIS RDRTP NC COEQ09",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "m3PbDdZD78u3KppEoXDMSLpZdvQB76CMbgPjD",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 77.43,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Automotive",
+                "Maintenance and Repair"
+            ],
+            "category_id": "18006003",
+            "date": "2019-05-08",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "AUTO DEBIT TO PAY LOC",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "ddBrn5vnmjHQ6NNPVXxzuL40NY1o9BCbYXROP",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 2.5,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Bank Fees",
+                "ATM"
+            ],
+            "category_id": "10002000",
+            "date": "2019-05-07",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "ATM FEE 1 W/D @ 2.50",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "wa7nvy3v1EFae55PQYXVswMmY4ZK5puLQ0bN9",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1000,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-05-07",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE ONLINE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "6pE3PVoP47feR77dM6O8ie8EZ90MYOia8grRM",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1877.92,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment",
+                "Rent"
+            ],
+            "category_id": "16002000",
+            "date": "2019-05-06",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Hamptons At RTP WEB PMTS *5Y885",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Lz1O8ov8yYILPMMe4bJ8tEYyqb68D1u0qbQgb",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 424,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Debit"
+            ],
+            "category_id": "21006000",
+            "date": "2019-05-02",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "FIRST CITIZENS TRANSFER INTERNET PCB",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "DzEZ8oP864Ib3VVoyjg9UOPZQrYgjvtZ5xrb4",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2970.9,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-04-30",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMNETPAYS *G******3019",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "1pADwEowRmf5N77gX4EOu3d05BbRA6CmPzZNv",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 22.86,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Travel",
+                "Gas Stations"
+            ],
+            "category_id": "22009000",
+            "date": "2019-04-29",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CRUIZERS #16 4706 APEX HIGHWADURHAM NC 231237",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "PzxQmo4mvaIayJJz81qNsndPy5xJvzUm906Pz",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1006.5,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Jewelry and Watches"
+            ],
+            "category_id": "19033000",
+            "date": "2019-04-22",
+            "location": {
+                "address": "1058 W Club Blvd  Ste 620",
+                "city": "Durham",
+                "lat": 36.017047,
+                "lon": -78.908953,
+                "region": "NC",
+                "store_number": "999999",
+                "postal_code": "27701",
+                "country": ""
+            },
+            "name": "Kay Jewelers",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "qAaVBDLBEgcQ0JJNLBEruYMw0paDgRUJdmMpj",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1000,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-04-18",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE ONLINE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "Bz6J4pD4dOIqDbbABNzXso3vKXjNmrF9BPXEo",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 225.13,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Utilities"
+            ],
+            "category_id": "18068000",
+            "date": "2019-04-18",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "DUKE ENERGY SE WEB_PAY **********1719",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "3pgPLVoLbNf8Zvv9oemXU80gdbzZL7CK13kyp",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 743,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Tax",
+                "Payment"
+            ],
+            "category_id": "20002000",
+            "date": "2019-04-17",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "IRS USATAXPYMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "yJmdjkKjqEFJZ77VwgNzuYMENXLpb7UOQe8Z4",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 195.26,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Service",
+                "Telecommunication Services"
+            ],
+            "category_id": "18063000",
+            "date": "2019-04-17",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Verizon Wireless",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "KzDV8oA834IQVJJ1rxe8uLJEkaVN7KCQ9abwr",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 2000,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-04-16",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE ONLINE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "kqr56XJ6MjTq3EEJpAyVsJZO45eaymFR5zYO5",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 1408.93,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Automotive",
+                "Car Dealers and Leasing"
+            ],
+            "category_id": "19005007",
+            "date": "2019-04-16",
+            "location": {
+                "address": "",
+                "city": "Cary",
+                "lat": 0,
+                "lon": 0,
+                "region": "NC",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "VISA #2278 LEITH AUDI",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "AzvxrVLrYRI6Vbbyq8QAh6EJ7ONjdaU6VryDy",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 500,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Payment"
+            ],
+            "category_id": "16000000",
+            "date": "2019-04-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "CAPITAL ONE MOBILE PMT",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "v4RQA3BADEtQxXX4zjJVuNM53JBVreHmZxb44",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 6.49,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Travel",
+                "Gas Stations"
+            ],
+            "category_id": "22009000",
+            "date": "2019-04-15",
+            "location": {
+                "address": "100 S Alston Ave",
+                "city": "Durham",
+                "lat": 35.987277,
+                "lon": -78.888115,
+                "region": "NC",
+                "store_number": "99207862",
+                "postal_code": "27701",
+                "country": ""
+            },
+            "name": "ExxonMobil",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "4p0qDVODeZfbZPP7YBepUbOwM5AjqBUk3Pp9B",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -2971.27,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Credit"
+            ],
+            "category_id": "21005000",
+            "date": "2019-04-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "INTER BUS MACH IBMNETPAYS *G******1519",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "jP8Zw5xwnjfPe445kO3QCbjKVJg1aYURxgo6n",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 100,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Third Party",
+                "Venmo"
+            ],
+            "category_id": "21010001",
+            "date": "2019-04-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Venmo",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "Braintree",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "0pZLdezdRkf6xggbje0XhBpgP1emJwIrpZzwq",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 83.88,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Shops",
+                "Department Stores"
+            ],
+            "category_id": "19018000",
+            "date": "2019-04-15",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "224700",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Walmart",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "rv6O31D3dRfQjppoN7JYuOMxq3JVkztBXqMRk",
+            "transaction_type": "place"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": -6000,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Deposit"
+            ],
+            "category_id": "21007000",
+            "date": "2019-04-12",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Customer Deposit",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "xxRp0Ky0PEtx8RRjd4Drtr8NzoLOV0CMdw8X0",
+            "transaction_type": "special"
+        },
+        {
+            "account_id": "bz40ZgkZRjIedpp8BMo0i5QQp1wZbZcqnEY8x",
+            "amount": 100,
+            "iso_currency_code": "USD",
+            "unofficial_currency_code": "",
+            "category": [
+                "Transfer",
+                "Withdrawal",
+                "Check"
+            ],
+            "category_id": "21012001",
+            "date": "2019-04-12",
+            "location": {
+                "address": "",
+                "city": "",
+                "lat": 0,
+                "lon": 0,
+                "region": "",
+                "store_number": "",
+                "postal_code": "",
+                "country": ""
+            },
+            "name": "Teller Cashed Check/Withdrawal",
+            "payment_meta": {
+                "by_order_of": "",
+                "payee": "",
+                "payer": "",
+                "payment_method": "",
+                "payment_processor": "",
+                "ppd_id": "",
+                "reason": "",
+                "reference_number": ""
+            },
+            "pending": false,
+            "pending_transaction_id": "",
+            "account_owner": "",
+            "transaction_id": "azPv75K70oIZV88dryD0sjDwPbR4ZxIZ6JMBE",
+            "transaction_type": "special"
+        }
+    ],
+    "total_transactions": 212
+}

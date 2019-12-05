@@ -8,6 +8,7 @@ class Register extends Component {
   state = {
       username: '',
       password: '',
+      name: '',
       submitted: false
   };
   componentDidMount(){
@@ -22,21 +23,21 @@ handleSubmit = async(e) => {
     e.preventDefault();
 
     this.setState({ submitted: true });
-    const { username, password } = this.state;
+    const { username, password, name } = this.state;
     const { dispatch } = this.props;
-    if (username && password) {
-         dispatch(userActions.register(username, password));
+    if (username && password && name) {
+         dispatch(userActions.register(this.state));
       //  console.log('result is ', result);
     }
 }
 renderRedirect = () => {
     if (this.props.redirect) {
-      return <Redirect to='/' />
+      return <Redirect to='/login' />
     }
   }
   render() {
     const { loggingIn } = this.props;
-    const {submitted, password, username} = this.state;
+    const {submitted, password, username, name} = this.state;
     return (
 
       <div className="col-md-6 col-md-offset-3">
@@ -44,11 +45,16 @@ renderRedirect = () => {
           <div className="loginBox">
               <span><span className="bold"></span> Create a new account</span>
               <form name="form" onSubmit={this.handleSubmit}>
+                  <div className={'form-group' + (submitted && !name ? ' has-error' : '')}>
+                      <input type="text" placeholder="Name" className="form-control" name="name" value={name} onChange={this.handleChange} />
+                      {submitted && !name &&
+                          <div className="red help-block">Name is required</div>
+                      }
+                  </div>
                   <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
-
-                      <input type="text" className="form-control" placeholder="Username" name="username" value={username} onChange={this.handleChange} />
+                      <input type="text" className="form-control" placeholder="Email" name="username" value={username} onChange={this.handleChange} />
                       {submitted && !username &&
-                          <div className="red help-block">Username is required</div>
+                          <div className="red help-block">Email is required</div>
                       }
                   </div>
                   <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>

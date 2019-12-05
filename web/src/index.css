@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: 'Harlow Solid Italic Italic';
+  src: local('Harlow Solid Italic Italic'), url('./resources/fonts/Harlow Solid Italic Italic.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Harlow Solid Italic Italic' !important;
+}
