@@ -62,9 +62,12 @@ function login(username, password) {
     return fetch(`/login`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
-          console.log('logged in user!', user.token);
+          console.log('user is ', typeof user);
+          localStorage.setItem('user', user);
+          localStorage.setItem('token', JSON.parse(user).token);
+          //console.log('logged in user!', user.token);
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('token', user.token);
+            //localStorage.setItem('token', user.token);
 
             return user;
         });
@@ -92,6 +95,7 @@ function register(newUser) {
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
 }
 
 function getAll() {

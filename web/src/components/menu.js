@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom'
+import {Link, Redirect, withRouter} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 
 import InboxIcon from '@material-ui/icons/MoveToInbox';
@@ -7,7 +7,8 @@ import {Mail, Menu, CreditCard, LocalOffer, AccountBox, StoreMallDirectory} from
 import {AppBar, Divider,Drawer,Toolbar, List, IconButton, Typography, Button,ListItem, ListItemText, ListItemIcon} from '@material-ui/core';
 
 import { userActions } from '../actions';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
+
 const CollisionLink = React.forwardRef((props, ref) => (
   <Link innerRef={ref} {...props} />
 ));
@@ -36,6 +37,7 @@ function ListItemLink(props) {
 
 const LoyoMenu = (props) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
  const [state, setState] = React.useState({
    open: false,
  });
@@ -47,6 +49,11 @@ const LoyoMenu = (props) => {
      setState({ open });
 
    }
+
+  const logout = event => {
+    dispatch(userActions.logout());
+    props.history.push('/login')
+  };
    const menuOptions = ['Rewards', 'Cards', 'Businesses'];
    const menuLinks = ['rewards','accounts','businesses'];
    const menuIcons = [<LocalOffer />, <CreditCard />, <StoreMallDirectory />];
@@ -55,7 +62,7 @@ const LoyoMenu = (props) => {
   
   let rightSection = (<Button color="inherit" component={Link} to="/login">Login</Button>);
   if (props.user && props.user.token) {
-    rightSection = (<Button color="inherit" component={Link} to="/login">Logout</Button>);
+    rightSection = (<Button color="inherit" onClick={logout}>Logout</Button>);
     menuList = (
       <div
           style={{width: '250px'}}
@@ -103,6 +110,7 @@ const LoyoMenu = (props) => {
 };
 
 function mapStateToProps(state) {
+  console.log('state is ', state);
     const { loggingIn, redirect, user } = state.auth;
     return {
         user,
@@ -111,5 +119,5 @@ function mapStateToProps(state) {
     };
 }
 
-const connected = connect(mapStateToProps)(LoyoMenu);
+const connected = withRouter(connect(mapStateToProps)(LoyoMenu));
 export { connected  as LoyoMenu};

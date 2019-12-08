@@ -36,7 +36,7 @@ class Home extends Component {
 
         <div className="col-md-6 col-md-offset-3">
         
-      Loyo
+      Loyo, yay
 
             </div>
 
