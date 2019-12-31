@@ -52,7 +52,6 @@ function removeAccount(user, id) {
     return fetch(`/accounts/${id}`, requestOptions)
         .then(responseHandler.handle)
         .then(ts => {
-            console.log('hooray we delted' , ts);
             return ts;
         });
 }

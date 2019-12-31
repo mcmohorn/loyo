@@ -17,8 +17,7 @@ import (
 // GetTransactions is the service to retrieve  a list of transactions
 func GetTransactions(pc *plaid.Client, db *mongo.Database, w http.ResponseWriter, r *data.MyRequest) {
 
-	// businesses, err := services.GetBusinesses(db)
-
+	// retrieve linked bank accounts for logged in user
 	accs, err := services.GetAccountsForUser(r.User.ID, db, false)
 	if err != nil {
 		RespondError(w, http.StatusBadRequest, err.Error())
@@ -29,22 +28,33 @@ func GetTransactions(pc *plaid.Client, db *mongo.Database, w http.ResponseWriter
 	// 	RespondError(w, http.StatusBadRequest, err.Error())
 	// }
 
+	// prepare result slice of balances
+	balances := make(map[string]*data.Balance, 0)
+
+	if len(accs) < 1 {
+		respondJSON(w, http.StatusOK, balances)
+		return
+	}
+
 	account := accs[0]
 
 	// return json to user
-	transRes, e := pc.GetTransactions(account.Token, "2019-01-01", "2019-08-15")
+	transRes, e := pc.GetTransactions(account.Token, "2019-01-01", "2019-12-28")
 	if e != nil {
 		RespondError(w, http.StatusNotFound, e.Error())
 		return
 	}
-	// HERE COUNT NUMBER FOR EACH ONE
-	busList := []string{"McDonald's", "VISA #2278 STAR MINI MART", "Food Lion"}
+
+	allBusinesses, er := services.GetAllBusinesses(db)
+	if er != nil {
+		RespondError(w, http.StatusInternalServerError, "Failed to retrieve businesses to list transactinos")
+		return
+	}
 	// bus list should have the date they joined
-	balances := make(map[string]*data.Balance, 0)
 
 	for _, v := range transRes.Transactions {
 		fmt.Println("name" + v.Name)
-		if utils.Contains(busList, v.Name) {
+		if utils.BusinessListContainsName(allBusinesses, v.Name) {
 			if balances[v.Name] != nil {
 				// update existing balance
 				balances[v.Name] = &data.Balance{
@@ -62,16 +72,11 @@ func GetTransactions(pc *plaid.Client, db *mongo.Database, w http.ResponseWriter
 
 	}
 
-	// var result data.User
+	// update user document in db before returning succesful result of balances
 	filter := bson.D{primitive.E{Key: "email", Value: r.User.Email}}
 	innerUpdate := bson.D{primitive.E{Key: "balances", Value: balances}}
 	update := bson.D{primitive.E{Key: "$set", Value: innerUpdate}}
-	//]filter := bson.D{{"email", r.User.Email}}
-	// update := bson.D{{"$set",
-	// 	bson.D{
-	// 		{"balances", balances},
-	// 	},
-	// }}
+	
 	users := db.Collection("Users")
 	_, err = users.UpdateOne(context.TODO(), filter, update)
 	if err != nil {

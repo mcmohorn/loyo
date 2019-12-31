@@ -8,7 +8,31 @@ export const businessActions = {
     removeBusiness,
     createBusiness,
     getBusiness,
+    searchBusinesses
 };
+
+function searchBusinesses(query) {
+    return dispatch => {
+
+        dispatch(request({ query }));
+
+        businessService.searchBusinesses(query)
+        .then(
+            results => {
+                dispatch(success(results));
+            },
+            error => {
+                dispatch(failure(error));
+            }
+        );
+      
+
+    };
+
+    function request(q) { return { type: businessConstants.SEARCH_BUSINESSES_REQUEST, q } }
+    function success(results) { return { type: businessConstants.SEARCH_BUSINESSES_SUCCESS, results } }
+    function failure(error) { return { type: businessConstants.SEARCH_BUSINESSES_FAILURE, error } }
+}
 
 function getBusiness(id) {
     return dispatch => {
@@ -29,7 +53,7 @@ function getBusiness(id) {
     };
 
     function request(t) { return { type: businessConstants.GET_BUSINESS_REQUEST, t } }
-    function success(b) { return { type: businessConstants.GET_BUSINESS_SUCCESS, business: b } }
+    function success(b) { return { type: businessConstants.GET_BUSINESS_SUCCESS, b } }
     function failure(error) { return { type: businessConstants.GET_BUSINESS_FAILURE, error } }
 }
 

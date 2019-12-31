@@ -1,6 +1,8 @@
 import { businessConstants, userConstants } from '../constants';
 
-export function businesses(state = {list:'[]', error: null}, action) {
+// list is the list of businesses the user owns
+// results is the list of search results
+export function businesses(state = {list:'[]', error: null, results: []}, action) {
     switch (action.type) {
     case userConstants.LOGOUT:
         state.error = null;
@@ -65,20 +67,29 @@ export function businesses(state = {list:'[]', error: null}, action) {
     case businessConstants.UPDATE_BUSINESS_FAILURE:
         state.error = action.error
         return state;
+    case businessConstants.SEARCH_BUSINESSES_REQUEST:
+        state.query = action.query;
+        return state;
+    case businessConstants.SEARCH_BUSINESSES_SUCCESS:
+        state.results = JSON.parse(action.results);
+        return {error: null, results: JSON.parse(action.results), query:state.query };
+    case businessConstants.SEARCH_BUSINESSES_FAILURE:
+        state.error = action.error
+        return state;
     default:
         return state
     }
 }
 
-export function business(state={business: {}, error: null}, action) {
+export function business(state={error: null}, action) {
     switch (action.type){
         case businessConstants.GET_BUSINES_REQUEST:
                 state.error = null
                 return state;
         case businessConstants.GET_BUSINESS_SUCCESS:
+            state = JSON.parse(action.b);
             state.error = null;
-            state.business = action.business;
-            return state
+            return state;
         case businessConstants.GET_BUSINESS_FAILURE:
             state.error = action.error;
                 state.business = {};

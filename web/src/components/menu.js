@@ -3,7 +3,7 @@ import {Link, Redirect, withRouter} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import {Mail, Menu, CreditCard, LocalOffer, AccountBox, StoreMallDirectory} from '@material-ui/icons';
+import {Mail, Menu, CreditCard, LocalOffer, AccountBox, StoreMallDirectory, Search} from '@material-ui/icons';
 import {AppBar, Divider,Drawer,Toolbar, List, IconButton, Typography, Button,ListItem, ListItemText, ListItemIcon} from '@material-ui/core';
 
 import { userActions } from '../actions';
@@ -54,9 +54,9 @@ const LoyoMenu = (props) => {
     dispatch(userActions.logout());
     props.history.push('/login')
   };
-   const menuOptions = ['Rewards', 'Cards', 'Businesses'];
-   const menuLinks = ['rewards','accounts','businesses'];
-   const menuIcons = [<LocalOffer />, <CreditCard />, <StoreMallDirectory />];
+   const menuOptions = ['Search', 'Rewards', 'Linked Cards', 'Businesses'];
+   const menuLinks = ['/search','/rewards','/accounts','/businesses'];
+   const menuIcons = [<Search />, <LocalOffer />, <CreditCard />, <StoreMallDirectory />];
    let menuList = null;
 
   

@@ -61,7 +61,17 @@ type Business struct {
 	Owner        primitive.ObjectID `bson:"owner" json:"owner,required"`
 	Admins       []User             `json:"admins,omitempty"`
 	Transactions []Transaction      `json:"transactions,omitempty"`
+	Rewards      []Reward           `json:"rewards,omitempty"`
 	Archived     bool               `json:"archived"`
+}
+
+// Business is the struct for the business data type
+type Redemption struct {
+	BusinessID primitive.ObjectID `json:"businessId" bson:"businessId,required"`
+	RewardID   string             `json:"rewardId" bson:"rewardId,required"`
+	Reward     Reward             `json:"reward,omitempty"`
+	Business   Business           `json:"business,omitempty"`
+	Claimer    primitive.ObjectID `json:"claimer" bson:"claimer,omitempty"`
 }
 
 // Archive archives a business
@@ -74,6 +84,16 @@ type Transaction struct {
 	Seller Business `json:"seller,required"`
 	Buyer  User     `json:"buyer,required"`
 	Amount float64  `json:"amount,required"`
+}
+
+// Reward is the struct for the reward data type
+type Reward struct {
+	ID          string  `json:"id" bson:"id,omitempty"`
+	Cost        float64 `json:"cost,required"`
+	Description string  `json:"description,omitempty"`
+	Name        string  `json:"name,required"`
+	Effective   string  `json:"effective,omitempty"`
+	Expiration  string  `json:"expiration,omitempty"`
 }
 
 // Network is a group of businesses

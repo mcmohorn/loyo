@@ -11,7 +11,28 @@ export const userActions = {
     getAll,
     getProfile,
     getTransactions,
+    redeemReward
 };
+
+function redeemReward(user, body) {
+
+    return dispatch => {
+        dispatch(request({ body }));
+        userService.redeemReward(user, body)
+            .then(
+                reward => {
+                    dispatch(success(reward));
+                },
+                error => {
+                    dispatch(failure(error));
+                }
+            );
+    };
+
+    function request(reward) { return { type: userConstants.REDEEM_REWARD_REQUEST, reward } }
+    function success(reward) { return { type: userConstants.REDEEM_REWARD_SUCCESS, reward } }
+    function failure(error) { return { type: userConstants.REDEEM_REWARD_FAILURE, error } }
+}
 
 function getProfile(token) {
 
@@ -24,7 +45,6 @@ function getProfile(token) {
                 },
                 error => {
                     dispatch(failure(error));
-                    // dispatch(alertActions.error(error));
                 }
             );
     };
@@ -46,7 +66,6 @@ function getTransactions(user, publicToken, accountId) {
                 },
                 error => {
                     dispatch(failure(error));
-                    //dispatch(alertActions.error(error));
                 }
             );
     };

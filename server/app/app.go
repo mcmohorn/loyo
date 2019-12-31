@@ -66,6 +66,8 @@ func (a *App) setRouters() {
 
 	a.Post("/user", a.handleRequest(handler.CreateUser))
 	a.Post("/login", a.handleRequest(handler.LoginUser))
+
+	a.Get("/search", a.handleRequest(handler.SearchBusinesses))
 	a.Get("/balances", a.handleAuthRequest(handler.GetTransactions))
 
 	a.Get("/business/{id}", a.handleRequest(handler.GetBusiness))
@@ -74,6 +76,7 @@ func (a *App) setRouters() {
 	a.Delete("/business/{id}", a.handleAuthRequest(handler.DeleteBusiness))
 	a.Get("/businesses", a.handleAuthRequest(handler.GetUserBusinesses))
 
+	a.Post("/redemption", a.handleAuthRequest(handler.CreateRedemption))
 	a.Post("/accounts", a.handleAuthRequest(handler.LinkAccount))
 	a.Get("/accounts", a.handleAuthRequest(handler.GetAccounts))
 	a.Delete("/accounts/{id}", a.handleAuthRequest(handler.DeleteAccount))

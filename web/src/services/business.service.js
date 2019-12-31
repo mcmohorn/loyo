@@ -6,8 +6,26 @@ export const businessService = {
     createBusiness,
     removeBusiness,
     getBusiness,
+    searchBusinesses
 };
 
+// search any businesses
+function searchBusinesses(query) {
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+    };
+
+    return fetch(`/search?q=${query}`, requestOptions)
+      .then(responseHandler.handle)
+      .then(businesses => {
+          return businesses;
+      });
+}
+
+// get MY businesses
 function getBusinesses(tok) {
     const requestOptions = {
         method: 'GET',

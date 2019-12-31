@@ -37,7 +37,7 @@ const RewardsList = (props) => {
      setState({balances: user.balances})
    }
  }, [user]);
- const rewardList = user ? (
+ const rewardList = user && state && state.balances ? (
    <List>
     {
       Object.keys(state.balances).map((b, i) => {

@@ -9,7 +9,25 @@ export const userService = {
     getAll,
     getProfile,
     getTransactions,
+    redeemReward
 };
+
+function redeemReward(user, reward) {
+  const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json',
+      'Authorization': user.token },
+      body: JSON.stringify(reward)
+  };
+
+  return fetch(`/redemption`, requestOptions)
+      .then(responseHandler.handle)
+      .then(user => {
+          //
+
+          return user;
+      });
+}
 
 function getTransactions(user) {
 

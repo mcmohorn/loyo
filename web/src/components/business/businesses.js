@@ -10,7 +10,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import { Mail, Menu, CreditCard, LocalOffer, Delete, Add } from '@material-ui/icons';
 import { AppBar, Toolbar, IconButton, Typography, ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction } from '@material-ui/core';
 import PlaidLink from 'react-plaid-link';
-import { businessActions } from '../actions';
+import { businessActions } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 import NewBusinessDialog from './newBusiness';
@@ -33,7 +33,6 @@ const Businesses = (props) => {
 
   useEffect(() => {
     if (user && user.token ) {
-      console.log('got businesses', businesses);
       setState({list: JSON.parse(businesses)})
     }
   }, [businesses]);
@@ -44,7 +43,6 @@ const remove  = (id) => {
 }
 
 const itemClicked = (id) => {
-  console.log('clickd', id);
   props.history.push(`/business/${id}`)
 }
 

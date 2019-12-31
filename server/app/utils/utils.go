@@ -7,10 +7,22 @@ import (
 	"net/http/httptest"
 	"net/http/httputil"
 	"time"
+
+	"github.com/mcmohorn/loyo/server/app/data"
 )
 
 func Now() int64 {
 	return time.Now().UnixNano() / int64(time.Millisecond)
+}
+
+// BusinessListContainsName returns true if the list of strings contains the given string
+func BusinessListContainsName(arr []*data.Business, item string) bool {
+	for _, l := range arr {
+		if item == l.Name {
+			return true
+		}
+	}
+	return false
 }
 
 // Contains returns true if the list of strings contains the given string

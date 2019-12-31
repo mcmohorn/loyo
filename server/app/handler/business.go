@@ -3,7 +3,9 @@ package handler
 import (
 	"context"
 	"encoding/json"
+	"log"
 	"net/http"
+	"time"
 
 	"github.com/gorilla/mux"
 	"github.com/mcmohorn/loyo/server/app/data"
@@ -13,13 +15,56 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
+
+	guuid "github.com/google/uuid"
 )
 
 // GetBusiness is the service to retrieve  a specific business
-func GetBusiness(pc *plaid.Client, db *mongo.Database, w http.ResponseWriter, r *data.MyRequest) {
+func SearchBusinesses(db *mongo.Database, w http.ResponseWriter, r *http.Request) {
 
 	collection := db.Collection("Businesses")
-	vars := mux.Vars(r.Request)
+	results := []data.Business{}
+	q := r.FormValue("q")
+	// tODO filter on max length
+	query := bson.M{
+		"$text": bson.M{
+			"$search": q,
+		},
+	}
+
+	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
+	cur, err := collection.Find(ctx, query)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer cur.Close(ctx)
+	for cur.Next(ctx) {
+		var result data.Business
+		err := cur.Decode(&result)
+		if err != nil {
+			log.Fatal(err)
+		}
+		results = append(results, result)
+	}
+	if err := cur.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	if err != nil {
+		RespondError(w, http.StatusNotFound, "Failed to search businesses")
+		return
+	}
+	respondJSON(w, http.StatusOK, results)
+
+	return
+
+}
+
+// GetBusiness is the service to retrieve  a specific business
+func GetBusiness(db *mongo.Database, w http.ResponseWriter, r *http.Request) {
+
+	collection := db.Collection("Businesses")
+	vars := mux.Vars(r)
 
 	id := vars["id"]
 	var b data.Business
@@ -35,6 +80,8 @@ func GetBusiness(pc *plaid.Client, db *mongo.Database, w http.ResponseWriter, r 
 	return
 
 }
+
+
 
 // CreateBusiness is the service to create a new business
 func CreateBusiness(pc *plaid.Client, db *mongo.Database, w http.ResponseWriter, r *data.MyRequest) {
@@ -56,6 +103,8 @@ func CreateBusiness(pc *plaid.Client, db *mongo.Database, w http.ResponseWriter,
 	collection := db.Collection("Businesses")
 
 	business.Owner = r.User.ID
+
+	initRewardIds(business)
 
 	b, err := collection.InsertOne(context.TODO(), business)
 	if err != nil {
@@ -140,6 +189,12 @@ func GetUserBusinesses(pc *plaid.Client, db *mongo.Database, w http.ResponseWrit
 
 	return
 
+}
+
+func initRewardIds(b data.Business) {
+	for i := range b.Rewards {
+		b.Rewards[i].ID = guuid.New().String()
+	}
 }
 
 // //  is the handler for getting a list of businesses the owner has registered
