@@ -99,6 +99,8 @@ const Page = (props) => {
       rewardId: selectedReward.id
     };
     dispatch(userActions.redeemReward(user, redeemBody));
+    // TODO close gracefully
+    setSelectedReward(null);
 
   };
 

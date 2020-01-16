@@ -20,7 +20,7 @@ function redeemReward(user, reward) {
       body: JSON.stringify(reward)
   };
 
-  return fetch(`/redemption`, requestOptions)
+  return fetch(`api/v1/redemption`, requestOptions)
       .then(responseHandler.handle)
       .then(user => {
           //
@@ -40,7 +40,7 @@ function getTransactions(user) {
         },
     };
 
-    return fetch(`/balances`, requestOptions)
+    return fetch(`api/v1/balances`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
             console.log('got result', user);
@@ -60,7 +60,7 @@ function getProfile(tok) {
         headers: { 'Content-Type': 'application/json' },
     };
 
-    return fetch(`/user`, requestOptions)
+    return fetch(`api/v1/user`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
           console.log('got user profile', user);
@@ -77,7 +77,7 @@ function login(username, password) {
         body: JSON.stringify({ email: username, password })
     };
 
-    return fetch(`/login`, requestOptions)
+    return fetch(`api/v1/login`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
           console.log('user is ', typeof user);
@@ -92,14 +92,13 @@ function login(username, password) {
 }
 
 function register(newUser) {
-  console.log('new user is ', newUser);
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: newUser.username, password: newUser.password, name: newUser.name })
     };
 
-    return fetch(`/user`, requestOptions)
+    return fetch(`api/v1/user`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
           console.log('regiseterd user', user);
@@ -122,5 +121,5 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch(`/users`, requestOptions).then(responseHandler.handle);
+    return fetch(`api/v1/users`, requestOptions).then(responseHandler.handle);
 }

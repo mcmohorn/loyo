@@ -95,7 +95,6 @@ func LinkAccount(pc *plaid.Client, db *mongo.Database, w http.ResponseWriter, r 
 			})
 			return
 		}
-		// respond with other error about failed lookup
 	}
 	RespondError(w, http.StatusBadRequest, "card already linked")
 

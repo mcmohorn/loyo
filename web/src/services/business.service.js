@@ -18,7 +18,7 @@ function searchBusinesses(query) {
         },
     };
 
-    return fetch(`/search?q=${query}`, requestOptions)
+    return fetch(`api/v1/search?q=${query}`, requestOptions)
       .then(responseHandler.handle)
       .then(businesses => {
           return businesses;
@@ -35,7 +35,7 @@ function getBusinesses(tok) {
         },
     };
 
-    return fetch(`/businesses`, requestOptions)
+    return fetch(`api/v1/businesses`, requestOptions)
       .then(responseHandler.handle)
       .then(businesses => {
           return businesses;
@@ -49,7 +49,7 @@ function getBusiness(id) {
         },
     };
 
-    return fetch(`/business/${id}`, requestOptions)
+    return fetch(`/api/v1/business/${id}`, requestOptions)
       .then(responseHandler.handle)
       .then(b => {
           return b;
@@ -66,7 +66,7 @@ function createBusiness(user, business) {
         body: JSON.stringify( business )
     };
 
-    return fetch(`/business`, requestOptions)
+    return fetch(`api/v1/business`, requestOptions)
         .then(responseHandler.handle)
         .then(business => {
             return business;
@@ -82,7 +82,7 @@ function removeBusiness(user, id) {
         },
     };
 
-    return fetch(`/business/${id}`, requestOptions)
+    return fetch(`api/v1/business/${id}`, requestOptions)
         .then(responseHandler.handle)
         .then(ts => {
             console.log('hooray we delted' , ts);

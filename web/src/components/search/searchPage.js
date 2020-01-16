@@ -68,7 +68,7 @@ const handleSearch = (e) => {
      list.map((b, i) => {
        return (<ListItem button key={`${i}_business_result`} onClick={() => itemClicked(b.id)} >
          <ListItemText primary={b.name} secondary={b.description}/>
-          asdf
+          
        </ListItem>);
      })
    }

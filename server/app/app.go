@@ -6,18 +6,16 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/plaid/plaid-go/plaid"
-
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
-	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
-
 	"github.com/mcmohorn/loyo/server/app/data"
 	"github.com/mcmohorn/loyo/server/app/handler"
 	"github.com/mcmohorn/loyo/server/app/utils"
 	"github.com/mcmohorn/loyo/server/config"
 	"github.com/mcmohorn/loyo/server/config/db"
+	"github.com/plaid/plaid-go/plaid"
+	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 // App has router and db instances
@@ -35,9 +33,7 @@ func (a *App) Initialize(config *config.Config) {
 	if err != nil {
 		log.Fatal("Could not connect database")
 	}
-	// fmt.Println(os.Getenv("PLAID_CLIENT_ID"))
-	// fmt.Println(os.Getenv("PLAID_SECRET"))
-	// fmt.Println(os.Getenv("PLAID_PUBLIC_KEY"))
+
 	// get plaid client connected
 	opts := plaid.ClientOptions{
 		os.Getenv("PLAID_CLIENT_ID"),
@@ -55,32 +51,46 @@ func (a *App) Initialize(config *config.Config) {
 	a.DB = db
 	a.Router = mux.NewRouter()
 	a.setRouters()
+
 }
 
 // setRouters sets the all required routers
 func (a *App) setRouters() {
-	a.Router.HandleFunc("/", utils.LogHandler(utils.MessageHandler))
+	// a.Router.HandleFunc("/", utils.LogHandler(utils.MessageHandler))
+	api := a.Router.PathPrefix("/api/v1/").Subrouter()
+	api.HandleFunc("/user", a.handleAuthRequest(handler.GetProfile)).Methods("GET")
+	api.HandleFunc("/user", a.handleRequest(handler.CreateUser)).Methods("POST")
+	api.HandleFunc("/login", a.handleRequest(handler.LoginUser)).Methods("POST")
+	api.HandleFunc("/search", a.handleRequest(handler.SearchBusinesses)).Methods("GET")
+	api.HandleFunc("/balances", a.handleAuthRequest(handler.GetTransactions)).Methods("GET")
+	api.HandleFunc("/business/{id}", a.handleRequest(handler.GetBusiness)).Methods("GET")
+	api.HandleFunc("/business", a.handleAuthRequest(handler.CreateBusiness)).Methods("POST")
+	api.HandleFunc("/business/{id}", a.handleAuthRequest(handler.UpdateBusiness)).Methods("PUT")
+	api.HandleFunc("/business/{id}", a.handleAuthRequest(handler.DeleteBusiness)).Methods("DELETE")
+	api.HandleFunc("/businesses", a.handleAuthRequest(handler.GetUserBusinesses)).Methods("GET")
 
-	// Routing for handling the projects
-	a.Get("/user", a.handleAuthRequest(handler.GetProfile))
+	api.HandleFunc("/redemption", a.handleAuthRequest(handler.CreateRedemption)).Methods("POST")
+	api.HandleFunc("/accounts", a.handleAuthRequest(handler.LinkAccount)).Methods("POST")
+	api.HandleFunc("/accounts", a.handleAuthRequest(handler.GetAccounts)).Methods("GET")
+	api.HandleFunc("/accounts/{id}", a.handleAuthRequest(handler.DeleteAccount)).Methods("DELETE")
 
-	a.Post("/user", a.handleRequest(handler.CreateUser))
-	a.Post("/login", a.handleRequest(handler.LoginUser))
+	// Serve static assets directly.
+	a.Router.PathPrefix("/dist/").Handler(http.StripPrefix("/dist/", http.FileServer(http.Dir("./dist/"))))
 
-	a.Get("/search", a.handleRequest(handler.SearchBusinesses))
-	a.Get("/balances", a.handleAuthRequest(handler.GetTransactions))
+	// Catch-all: Serve our JavaScript application's entry-point (index.html).
+	a.Router.PathPrefix("/").HandlerFunc(IndexHandler("./dist/index.html"))
 
-	a.Get("/business/{id}", a.handleRequest(handler.GetBusiness))
-	a.Post("/business", a.handleAuthRequest(handler.CreateBusiness))
-	a.Put("/businesss/{id}", a.handleAuthRequest(handler.UpdateBusiness))
-	a.Delete("/business/{id}", a.handleAuthRequest(handler.DeleteBusiness))
-	a.Get("/businesses", a.handleAuthRequest(handler.GetUserBusinesses))
+}
 
-	a.Post("/redemption", a.handleAuthRequest(handler.CreateRedemption))
-	a.Post("/accounts", a.handleAuthRequest(handler.LinkAccount))
-	a.Get("/accounts", a.handleAuthRequest(handler.GetAccounts))
-	a.Delete("/accounts/{id}", a.handleAuthRequest(handler.DeleteAccount))
+// IndexHandler serves the front end (via index.html)
+func IndexHandler(entrypoint string) func(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("sending index")
+	fn := func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("sending index inside")
+		http.ServeFile(w, r, entrypoint)
+	}
 
+	return http.HandlerFunc(fn)
 }
 
 // Get wraps the router for GET method
@@ -105,8 +115,10 @@ func (a *App) Delete(path string, f func(w http.ResponseWriter, r *http.Request)
 
 // Run the app on it's router
 func (a *App) Run(host string) {
-	fmt.Println("Listening on " + host)
+	fmt.Println("Listening on " + host) //
+	// TODO: toggle based on development environment
 	log.Fatal(http.ListenAndServe(host, utils.RequestLogger(a.Router)))
+	// log.Fatal(http.ListenAndServeTLS(host, "cert.pem", "key.pem", utils.RequestLogger(a.Router)))
 }
 
 // RequestHandlerFunction handles non -authorized routes

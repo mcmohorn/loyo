@@ -23,7 +23,7 @@ func CreateRedemption(pc *plaid.Client, db *mongo.Database, w http.ResponseWrite
 	}
 	defer r.Body.Close()
 
-	required := []string{"BusinessId", "RewardId"}
+	required := []string{"BusinessID", "RewardID", "AccountID"}
 
 	if err := utils.ValidateRequired(redemption, required); err != nil {
 		RespondError(w, http.StatusBadRequest, err.Error())
@@ -32,6 +32,28 @@ func CreateRedemption(pc *plaid.Client, db *mongo.Database, w http.ResponseWrite
 
 	// find the business, find corresponding reward, throw 400s if bad
 	var business data.Business
+	var account *data.Account
+
+	// TODO leave this part here, if user specifies an account id then use that one
+	// for now we are just using the first one (see next part)
+	// e := db.Collection("Accounts").FindOne(context.TODO(), bson.M{"_id": redemption.AccountID}).Decode(&account)
+	// if e != nil {
+	// 	RespondError(w, http.StatusNotFound, "Account not found")
+	// 	return
+	// }
+
+	// retrieve linked bank accounts for logged in user
+	accs, err := services.GetAccountsForUser(r.User.ID, db, false)
+	if err != nil {
+		RespondError(w, http.StatusBadRequest, err.Error())
+	}
+
+	if len(accs) > 0 {
+		account = accs[0]
+	} else {
+		RespondError(w, http.StatusNotFound, "User has no accounts to redeem from")
+		return
+	}
 
 	e := db.Collection("Businesses").FindOne(context.TODO(), bson.M{"_id": redemption.BusinessID}).Decode(&business)
 	if e != nil {
@@ -88,20 +110,23 @@ func CreateRedemption(pc *plaid.Client, db *mongo.Database, w http.ResponseWrite
 
 	// user has available funds so create redemption resource
 
-	// send created with redemption resource if successful
 	// TODO add redemption.date
 	redemption.Claimer = r.User.ID
 	redemption.Reward = reward
 	redemption.BusinessID = business.ID
+	redemption.AccountAddress = account.Address
 
-	r, err := db.Collection("Redemptions").InsertOne(context.TODO(), redemption)
+	// TODO: depending on account balances, perhaps you need to deduct from a second account
+	// insert a second redemption linking to another account then
+
+	redemptionResult, err := db.Collection("Redemptions").InsertOne(context.TODO(), redemption)
 
 	if err != nil {
 		RespondError(w, http.StatusInternalServerError, err.Error())
 		return
 	}
 
-	respondJSON(w, http.StatusCreated, r)
+	respondJSON(w, http.StatusCreated, redemptionResult)
 
 	return
 }

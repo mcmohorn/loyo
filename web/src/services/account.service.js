@@ -16,7 +16,7 @@ function getAccounts(tok) {
         },
     };
 
-    return fetch(`/accounts`, requestOptions)
+    return fetch(`api/v1/accounts`, requestOptions)
         .then(responseHandler.handle)
         .then(accs => {
             return accs;
@@ -33,7 +33,7 @@ function linkAccount(user, publicToken, accountId) {
         body: JSON.stringify({ token:publicToken, accountId })
     };
 
-    return fetch(`/accounts`, requestOptions)
+    return fetch(`api/v1/accounts`, requestOptions)
         .then(responseHandler.handle)
         .then(ts => {
             return ts;
@@ -49,7 +49,7 @@ function removeAccount(user, id) {
         },
     };
 
-    return fetch(`/accounts/${id}`, requestOptions)
+    return fetch(`api/v1/accounts/${id}`, requestOptions)
         .then(responseHandler.handle)
         .then(ts => {
             return ts;

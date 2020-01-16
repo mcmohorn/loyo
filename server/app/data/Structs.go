@@ -12,11 +12,14 @@ type MyRequest struct {
 	User
 }
 
+// Balance is a balance at a business
 type Balance struct {
-	Amount  float64 `json:"amount"`
-	Updated int64   `json:"updated"`
+	Amount   float64   `json:"amount"`
+	Updated  int64     `json:"updated"`
+	Business *Business `json:"business,omitempty"`
 }
 
+// TokenBody is a payload for retrieving account info
 type TokenBody struct {
 	Token     string `json:"token"`
 	AccountID string `json:"accountId"`
@@ -65,13 +68,15 @@ type Business struct {
 	Archived     bool               `json:"archived"`
 }
 
-// Business is the struct for the business data type
+// Redemption is the struct for the business data type
 type Redemption struct {
-	BusinessID primitive.ObjectID `json:"businessId" bson:"businessId,required"`
-	RewardID   string             `json:"rewardId" bson:"rewardId,required"`
-	Reward     Reward             `json:"reward,omitempty"`
-	Business   Business           `json:"business,omitempty"`
-	Claimer    primitive.ObjectID `json:"claimer" bson:"claimer,omitempty"`
+	BusinessID     primitive.ObjectID `json:"businessId" bson:"businessId,required"`
+	AccountID      primitive.ObjectID `json:"accountId" bson:"accountId,omitempty"`
+	AccountAddress string             ` bson:"accountAddress,omitempty"`
+	RewardID       string             `json:"rewardId" bson:"rewardId,required"`
+	Reward         Reward             `json:"reward,omitempty"`
+	Business       Business           `json:"business,omitempty"`
+	Claimer        primitive.ObjectID `json:"claimer" bson:"claimer,omitempty"`
 }
 
 // Archive archives a business
@@ -104,8 +109,6 @@ type Network struct {
 	Businesses  []string `json:"businesses"`
 }
 
-// Promotions?
-
 // Address is the struct for the address data type
 type Address struct {
 	Street1 string `json:"street1,required"`
@@ -116,19 +119,17 @@ type Address struct {
 	Zip     string `json:"zip"`
 }
 
+// ResponseResult is an error and a result (both strings)
 type ResponseResult struct {
 	Error  string `json:"error"`
 	Result string `json:"result"`
 }
 
+// Block is a blockchain piece of the chain
 type Block struct {
 	Index     int
 	Timestamp string
 	BPM       int
 	Hash      string
 	PrevHash  string
-}
-
-type Message struct {
-	BPM int
 }

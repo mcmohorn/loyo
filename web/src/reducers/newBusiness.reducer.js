@@ -1,4 +1,4 @@
-import { newBusinessConstants } from '../constants';
+import { newBusinessConstants, businessConstants } from '../constants';
 
 const initialNewBusinessState = {
     name: '',
@@ -10,6 +10,12 @@ const initialNewBusinessState = {
 
 export function newBusiness(state=initialNewBusinessState, action) {
     switch (action.type){
+        case businessConstants.CREATE_BUSINESS_SUCCESS:
+            state.rewards = [];
+            state.addresses = [];
+            state.description = '';
+            state.name = '';
+            return state;
         case newBusinessConstants.SET_REWARDS:
             state.rewards = action.l;
             return state;

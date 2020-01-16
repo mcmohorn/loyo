@@ -85,7 +85,6 @@ function getBusinesses(user) {
 function createBusiness(user, business ) {
     return dispatch => {
         dispatch(request({ user }));
-        console.log('disaptching and ', user, business);
         businessService.createBusiness(user, business)
             .then(
                 business => {

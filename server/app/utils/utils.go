@@ -15,6 +15,16 @@ func Now() int64 {
 	return time.Now().UnixNano() / int64(time.Millisecond)
 }
 
+// GetBusinessFromName returns true if the list of strings contains the given string
+func GetBusinessFromName(arr []*data.Business, item string) *data.Business {
+	for _, l := range arr {
+		if item == l.Name {
+			return l
+		}
+	}
+	return nil
+}
+
 // BusinessListContainsName returns true if the list of strings contains the given string
 func BusinessListContainsName(arr []*data.Business, item string) bool {
 	for _, l := range arr {

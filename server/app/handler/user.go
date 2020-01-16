@@ -15,7 +15,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-var emailLength = []int{3, 345}
+var emailLength = []int{7, 345}
 var passwordLength = []int{8, 20}
 var nameLength = []int{1, 50}
 
@@ -126,40 +126,6 @@ func LoginUser(db *mongo.Database, w http.ResponseWriter, r *http.Request) {
 
 	result.Token = tokenString
 	result.Password = ""
-
-	// accounts := db.Collection("Accounts")
-
-	// var accs []*data.Account
-
-	// // Passing bson.D{{}} as the filter matches all documents in the collection
-	// cur, err := accounts.Find(context.TODO(), bson.D{primitive.E{Key: "user", Value: r.User.ID}})
-	// if err != nil {
-	// 	RespondError(w, http.StatusInternalServerError, err.Error())
-	// 	return
-	// }
-
-	// // Finding multiple documents returns a cursor
-	// // Iterating through the cursor allows us to decode documents one at a time
-	// for cur.Next(context.TODO()) {
-
-	// 	// create a value into which the single document can be decoded
-	// 	var elem data.Account
-	// 	err := cur.Decode(&elem)
-	// 	if err != nil {
-	// 		RespondError(w, http.StatusInternalServerError, err.Error())
-	// 		return
-	// 	}
-
-	// 	accs = append(accs, &elem)
-	// }
-
-	// if err := cur.Err(); err != nil {
-	// 	RespondError(w, http.StatusInternalServerError, err.Error())
-	// 	return
-	// }
-
-	// // Close the cursor once finished
-	// cur.Close(context.TODO())
 
 	respondJSON(w, http.StatusOK, result)
 

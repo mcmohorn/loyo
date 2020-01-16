@@ -85,10 +85,12 @@ const NewBusinessDialog = (props) => {
   };
 
   function handleClose() {
+    setActiveStep(0);
     onClose();
   }
 
   const handleSubmit = (e) => {
+    setActiveStep(0);
     dispatch(businessActions.createBusiness(user, business))
   }
 

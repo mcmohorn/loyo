@@ -1,12 +1,18 @@
 web/node_modules/
+web/build/
 web/package-lock.json
 **/.DS_Store
 **/yarn.lock
 
 **/.idea/*
 
+server/https-server.key
+server/https-server.crt
+server/dist/
 server/vendor/
 server/.vscode/launch.json
+
+.vscode/
 
 #Ignored Server files
 # Binaries for programs and plugins
