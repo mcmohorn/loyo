@@ -11,6 +11,7 @@ server/https-server.crt
 server/dist/
 server/vendor/
 server/.vscode/launch.json
+server/__debug_bin
 
 .vscode/
 
