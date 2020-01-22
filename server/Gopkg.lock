@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  branch = "master"
+  digest = "1:cceb5d053f96861017b3d3a6123aea8563a2b6d707565f92a896dc3931e59f91"
+  name = "github.com/chebyrash/promise"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "9bd9ee08fbd8aadcee03d46c927ff33b4fdcc96e"
+
+[[projects]]
   digest = "1:76dc72490af7174349349838f2fe118996381b31ea83243812a97e5a0fd5ed55"
   name = "github.com/dgrijalva/jwt-go"
   packages = ["."]
@@ -161,6 +169,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/chebyrash/promise",
     "github.com/dgrijalva/jwt-go",
     "github.com/google/uuid",
     "github.com/gorilla/mux",
