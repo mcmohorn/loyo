@@ -8,12 +8,18 @@ phases:
 
   pre_build: 
     commands:
-
+      - echo Linting...
       # Ensure code passes all lint tests
       - golint -set_exit_status
-
+      - echo Testing...
       # Run all tests included with our application
       - go test
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - REPOSITORY_URI=361575806679.dkr.ecr.us-east-1.amazonaws.com/loyo-repository
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
 
   build:
     commands:
@@ -21,7 +27,19 @@ phases:
       # Build our application
       - go build -o app
 
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+  postbuild:
+    commands:
+      - echo Build completed on `date` \uD83D\uDE00
+      - echo Pushing the Docker images... U+1F642	
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - echo Writing image definitions file...
+      - printf '[{"name":"hello-world","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+
 artifacts:
   files:
-    - app
-    - buildspec.yml
+    files: imagedefinitions.json
