@@ -21,7 +21,6 @@ phases:
   build:
     commands:
 
-      # Build our application
       - go build -o app
 
       - echo Build started on `date`
