@@ -12,8 +12,6 @@ phases:
 
   pre_build: 
     commands:
-      - echo Testing...
-      # Run all tests included with our application
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
