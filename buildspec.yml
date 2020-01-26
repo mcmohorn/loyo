@@ -20,7 +20,8 @@ phases:
 
   build:
     commands:
-
+      - pwd
+      - cd server
       - go build -o app
 
       - echo Build started on `date`
