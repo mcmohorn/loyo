@@ -22,6 +22,7 @@ phases:
     commands:
       - pwd
       - ls
+      - cd server
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
