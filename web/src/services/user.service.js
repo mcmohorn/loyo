@@ -1,5 +1,5 @@
 
-import { authHeader , responseHandler } from '../helpers';
+import { authHeader, responseHandler } from '../helpers';
 
 
 export const userService = {
@@ -13,34 +13,34 @@ export const userService = {
 };
 
 function redeemReward(user, reward) {
-  const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json',
-      'Authorization': user.token },
-      body: JSON.stringify(reward)
-  };
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': user.token
+        },
+        body: JSON.stringify(reward)
+    };
 
-  return fetch(`api/v1/redemption`, requestOptions)
-      .then(responseHandler.handle)
-      .then(user => {
-          //
-
-          return user;
-      });
+    return fetch(`/api/v1/redemption`, requestOptions)
+        .then(responseHandler.handle)
+        .then(user => {
+            return user;
+        });
 }
 
 function getTransactions(user) {
 
-  if (!user || !user.token) return Promise.reject('No token provided');
+    if (!user || !user.token) return Promise.reject('No token provided');
     const requestOptions = {
         method: 'GET',
         headers: {
-          'Authorization': user.token,
-          'Content-Type': 'application/json'
+            'Authorization': user.token,
+            'Content-Type': 'application/json'
         },
     };
 
-    return fetch(`api/v1/balances`, requestOptions)
+    return fetch(`/api/v1/balances`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
             console.log('got result', user);
@@ -53,19 +53,16 @@ function getTransactions(user) {
 
 
 function getProfile(tok) {
-  if (!tok) return Promise.reject('No token provided');
+    if (!tok) return Promise.reject('No token provided');
     const requestOptions = {
         method: 'GET',
         'Authorization': tok,
         headers: { 'Content-Type': 'application/json' },
     };
 
-    return fetch(`api/v1/user`, requestOptions)
+    return fetch(`/api/v1/user`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
-          console.log('got user profile', user);
-
-
             return user;
         });
 }
@@ -80,13 +77,8 @@ function login(username, password) {
     return fetch(`api/v1/login`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
-          console.log('user is ', typeof user);
-          localStorage.setItem('user', user);
-          localStorage.setItem('token', JSON.parse(user).token);
-          //console.log('logged in user!', user.token);
-            // store user details and jwt token in local storage to keep user logged in between page refreshes
-            //localStorage.setItem('token', user.token);
-
+            localStorage.setItem('user', user);
+            localStorage.setItem('token', JSON.parse(user).token);
             return user;
         });
 }
@@ -101,7 +93,6 @@ function register(newUser) {
     return fetch(`api/v1/user`, requestOptions)
         .then(responseHandler.handle)
         .then(user => {
-          console.log('regiseterd user', user);
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('user', JSON.stringify(user));
 
@@ -121,5 +112,5 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch(`api/v1/users`, requestOptions).then(responseHandler.handle);
+    return fetch(`/api/v1/users`, requestOptions).then(responseHandler.handle);
 }

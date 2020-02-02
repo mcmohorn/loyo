@@ -93,16 +93,4 @@ const remove  = (id) => {
 
 };
 
-// function mapStateToProps(state) {
-//   console.log('time to map state to props', state);
-//     const { loggingIn, redirect, user } = state.auth;
-//     const {accounts} = state.accounts || [];
-//     return {
-//         user,
-//         loggingIn,
-//         redirect,
-//         accounts,
-//     };
-// }
-
 export { Accounts  as AccountsList};
