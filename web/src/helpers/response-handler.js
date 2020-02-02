@@ -16,7 +16,7 @@ function handle(response) {
             //const error = (data && data.message) || response.statusText;
             return Promise.reject(text);
         } else {
-          const data = text && JSON.parse(text);
+          // const data = text && JSON.parse(text);
         }
 
         return data;

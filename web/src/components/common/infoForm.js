@@ -29,7 +29,7 @@ const InfoForm = () => {
 
   return (
     <React.Fragment>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className={classes.grid}>
         <Grid item xs={12}>
           <TextField
             onChange={(e) => handleChange('name', e.target.value)}

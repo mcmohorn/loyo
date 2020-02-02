@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router';
 import App from '../container/App';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 
 import {HomePage, LoginPage, RegisterPage, LoyoMenu, RewardsList, AccountsList} from '../components';
@@ -11,25 +11,24 @@ import { SearchPage } from '../components/search';
 import {BusinessesList, BusinessPage} from '../components/business/';
 
 
-import { useDispatch, useSelector } from 'react-redux';
 
 // TODO fix this, it wasn't working, probably just wrap it with map state to props?
-function PrivateRoute ({component: Component, auth, user, ...rest}) {
-  return (
-    <Route
-      {...rest}
-      render={(props) => {
-        if (!!user && !!user.token) {
-          return <Component {...props} />;
-        } else {
-          return <Redirect to={{pathname: '/login', state: {from: props.location}}} />;
-        }
-      }
-      }
+// function PrivateRoute ({component: Component, auth, user, ...rest}) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={(props) => {
+//         if (!!user && !!user.token) {
+//           return <Component {...props} />;
+//         } else {
+//           return <Redirect to={{pathname: '/login', state: {from: props.location}}} />;
+//         }
+//       }
+//       }
  
-    />
-  )
-}
+//     />
+//   )
+// }
 
 export default (
   <App>

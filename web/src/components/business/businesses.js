@@ -1,15 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import { Mail, Menu, CreditCard, LocalOffer, Delete, Add } from '@material-ui/icons';
-import { AppBar, Toolbar, IconButton, Typography, ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction } from '@material-ui/core';
-import PlaidLink from 'react-plaid-link';
+import { Delete, Add } from '@material-ui/icons';
+import { IconButton, ListItem, ListItemText, ListItemSecondaryAction } from '@material-ui/core';
 import { businessActions } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -23,19 +18,19 @@ const useStyles = makeStyles(theme => ({
 
 const Businesses = (props) => {
   const businesses = useSelector(state => state.businesses.list)
-  const { redirect, user } = useSelector(state => state.auth);
+  const {user } = useSelector(state => state.auth);
   const dispatch = useDispatch();
   const classes = useStyles();
   const [state, setState] = useState({list: [], adding: false});
 
 
-  useEffect(() => dispatch(businessActions.getBusinesses(user)), []);
+  useEffect(() => dispatch(businessActions.getBusinesses(user)), [dispatch, user]);
 
   useEffect(() => {
     if (user && user.token ) {
       setState({list: JSON.parse(businesses)})
     }
-  }, [businesses]);
+  }, [businesses, user]);
 
 
 const remove  = (id) => {
@@ -52,7 +47,7 @@ const toggleForm = () => {
 
  return (
    <div>
-   <List>
+   <List className={classes.list}>
    {
      state.list.map((b, i) => {
        return (<ListItem button key={`${i}_business_opt`} onClick={() => itemClicked(b.id)} >

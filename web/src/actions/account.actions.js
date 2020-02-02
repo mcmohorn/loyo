@@ -1,7 +1,5 @@
 import { accountConstants } from '../constants';
 import { accountService } from '../services';
-import { alertActions } from './';
-import { history } from '../helpers';
 
 export const accountActions = {
     getAccounts,

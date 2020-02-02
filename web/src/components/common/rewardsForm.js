@@ -3,30 +3,23 @@ import Grid from '@material-ui/core/Grid';
 import {useDispatch, useSelector} from 'react-redux';
 import DateFnsUtils from '@date-io/date-fns';
 import {
-    TextField,
-    Select,
     FormControl,
     FormHelperText,
-    MenuItem,
     InputLabel,
     InputAdornment,
-    FilledInput, 
     Input,
-    Paper,
     Table,
     TableHead,
     TableCell,
     TableBody,
     TableRow,
     Button,
-    TableContainer,
 } from '@material-ui/core';
 import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker
 } from '@material-ui/pickers';
 import { makeStyles } from '@material-ui/core/styles';
-import { RewardsList } from '../rewards';
 import { newBusinessActions } from '../../actions';
 
 import {prettyDate} from '../../helpers/date-helper';

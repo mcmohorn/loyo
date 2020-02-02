@@ -1,27 +1,17 @@
-import React, {useState, useEffect, useAsyncEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import { Mail, Menu, CreditCard, LocalOffer, Delete, Add, Info, Fastfood, Redeem, Clear } from '@material-ui/icons';
-import { AppBar,
-  Toolbar,
+import { LocalOffer, Fastfood, Redeem, Clear } from '@material-ui/icons';
+import { 
   IconButton,
   Typography,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  ListItemSecondaryAction,
   GridList,
   GridListTile,
   ListSubheader,
   GridListTileBar,
   Dialog,
-  Paper,
   DialogActions,
   DialogTitle,
   DialogContent
@@ -71,18 +61,17 @@ const useStyles = makeStyles(theme => ({
 
 const Page = (props) => {
   const business = useSelector(state => state.business)
-  const { redirect, user } = useSelector(state => state.auth);
-  const { loading, value, error } = useSelector(state => state.currentReward);
+  const { user } = useSelector(state => state.auth);
+  const {  error } = useSelector(state => state.currentReward);
   const dispatch = useDispatch();
   const classes = useStyles();
-  const [state, setState] = useState({});
   const [showError, setShowError] = useState(false);
   const [selectedReward, setSelectedReward] = useState(null);
 
   // load the details for this business
   useEffect(() => {
     dispatch(businessActions.getBusiness(props.match.params.id))
-  }, []);
+  }, [dispatch, props.match.params.id]);
 
   useEffect(() => {
     setSelectedReward(null);

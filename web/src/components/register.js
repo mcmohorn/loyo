@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import { userActions } from '../actions';
 import { connect, useDispatch } from 'react-redux';
@@ -135,6 +135,7 @@ const Register = (props) => {
               color="primary"
               className={classes.submit}
               onClick={handleSubmit}
+              disabled={submitted}
             >
               Create Account
             </Button>

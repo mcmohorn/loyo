@@ -18,12 +18,11 @@ const useStyles = makeStyles(theme => ({
 
 const SearchPage = (props) => {
   const { results } = useSelector(state => state.businesses);
-  const { redirect, user } = useSelector(state => state.auth);
+  // const { redirect, user } = useSelector(state => state.auth);
   const dispatch = useDispatch();
   const classes = useStyles();
   const [list, setList] = useState([]);
   const [query, setQuery] = useState('');
-
 
   useEffect(() => {
     setList(results);
@@ -47,6 +46,7 @@ const handleSearch = (e) => {
         variant="outlined"
         className={classes.margin}
         id="search-textfield"
+        value={query}
         placeholder="Search"
         onBlur={handleSearch}
         InputProps={{

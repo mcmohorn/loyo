@@ -1,5 +1,5 @@
 
-import { authHeader, responseHandler } from '../helpers';
+import { responseHandler } from '../helpers';
 
 export const accountService = {
     getAccounts,

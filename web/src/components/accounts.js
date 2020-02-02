@@ -1,22 +1,15 @@
-import React, {Component, useState, useEffect} from 'react';
-import {Redirect} from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import {Mail, Menu, CreditCard, LocalOffer, Delete} from '@material-ui/icons';
-import {AppBar, Toolbar, IconButton, Typography, ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction} from '@material-ui/core';
+import { Delete} from '@material-ui/icons';
+import {IconButton, ListItem, ListItemText, ListItemSecondaryAction} from '@material-ui/core';
 import PlaidLink from 'react-plaid-link';
-import { userActions, accountActions } from '../actions';
+import { accountActions } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
-
 
 const useStyles = makeStyles(theme => ({
   list: {
-    width: 250,
+
   },
   fullList: {
     width: 'auto',
@@ -31,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 
 const Accounts = (props) => {
   const accounts = useSelector(state => state.accounts.list)
-  const { loggingIn, redirect, user } = useSelector(state => state.auth);
+  const { user } = useSelector(state => state.auth);
   const dispatch = useDispatch();
   const classes = useStyles();
   const [state, setState] = useState({open: false, redirect: null, searching: false, list: []});
@@ -39,13 +32,13 @@ const Accounts = (props) => {
    dispatch(accountActions.linkAccount(user,token, metadata.account_id))
 }
 
-  useEffect(() => dispatch(accountActions.getAccounts(user)), []);
+  useEffect(() => dispatch(accountActions.getAccounts(user)), [user, dispatch]);
 
   useEffect(() => {
     if (user && user.token ) {
       setState({list: JSON.parse(accounts)})
     }
-  }, [accounts]);
+  }, [accounts, user]);
 
 const handleOnExit = () => {
 // handle the case when your user exits Link
@@ -54,7 +47,7 @@ const handleOnExit = () => {
 const remove  = (id) => {
   dispatch(accountActions.removeAccount(user, id))
 }
- const CollisionLink = React.forwardRef((props, ref) => (
+ React.forwardRef((props, ref) => (
    <PlaidLink innerRef={ref} {...props} />
  ));
 
@@ -71,7 +64,7 @@ const remove  = (id) => {
    </PlaidLink>
  )
  return (
-   <List>
+   <List className={classes.list}>
    {
      state.list.map((b, i) => {
        return (<ListItem button key={`${i}_account_opt`} >

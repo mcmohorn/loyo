@@ -1,22 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {
-  Grid,
   Table,
   TableCell,
   TableRow,
   TableBody,
   TableHead,
-  Button,
   Typography
 } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import { useSelector } from 'react-redux';
 
 import {prettyDate} from '../../helpers/date-helper';
 
-import { newBusinessActions } from '../../actions';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -29,7 +23,6 @@ const useStyles = makeStyles(theme => ({
 
 const ReviewNewBusiness = () => {
 
-  const dispatch = useDispatch();
   const classes = useStyles();
   const { addresses, rewards, name, description } = useSelector(state => state.newBusiness);
 
