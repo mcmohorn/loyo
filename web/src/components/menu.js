@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
   title: {
     fontFamily: 'Harlow Solid Italic Italic',
     flexGrow: 1,
+    cursor: 'pointer'
   },
 }));
 
@@ -92,14 +93,14 @@ const LoyoMenu = (props) => {
   <AppBar position="static">
     <Toolbar>
       {
-        user ? 
+        user && user.id ? 
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={toggleMenu(true)}>
           <Menu />
         </IconButton>
        : null 
       }
       
-      <Typography variant="h6" className={classes.title}>
+      <Typography variant="h6" className={classes.title} onClick={() => {props.history.push('/')}}>
         Loyo
       </Typography>
       {rightSection}
@@ -113,7 +114,7 @@ const LoyoMenu = (props) => {
 };
 
 function mapStateToProps(state) {
-  console.log('state is ', state);
+
     const { loggingIn, redirect, user } = state.auth;
     return {
         user,

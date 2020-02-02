@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { CreditCard, Store, Loyalty, AccountBalance, SyncAlt, ShoppingCart, DirectionsWalk, NavigateBefore } from '@material-ui/icons';
+import { CreditCard, Store, Loyalty, AccountBalance, SyncAlt, ShoppingCart, DirectionsWalk } from '@material-ui/icons';
 
 const items = [
   {
@@ -30,18 +30,12 @@ const items = [
     },
   },
   {
-    name: "Get Rewarded",
+    name: "Get Rewards",
     description: "Claim free items and discounts with your points!",//  Business owners decide how points can be spent.
     content: () => {
       return <div><Loyalty /></div>
     },
     buttonText: "Get Started",
-    onClick: (user) => {
-      console.log('user clicked', user);
-      if (user.id) {
-  
-      }
-    }
   }
 ]
 
