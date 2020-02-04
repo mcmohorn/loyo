@@ -9,7 +9,7 @@ import { CreditCard, Store, Loyalty, AccountBalance, SyncAlt, ShoppingCart, Dire
 const items = [
   {
     name: "Link a Card",
-    description: "Connect to your bank's website to automatically claim loyalty points.",
+    description: "Connect to your bank's website to claim loyalty points.",
     content: () => {
       return <div>
         <CreditCard fontSize="large" />
@@ -20,7 +20,7 @@ const items = [
   },
   {
     name: "Shop as Usual",
-    description: "Earn loyalty points automatically when you use your card.",
+    description: "Earn loyalty points when you use your card.",
     content: () => {
       return <div>
         <DirectionsWalk fontSize="large" />
@@ -31,7 +31,7 @@ const items = [
   },
   {
     name: "Get Rewards",
-    description: "Claim free items and discounts with your points!",//  Business owners decide how points can be spent.
+    description: "Use your points to claim discounts and free stuff!",//  Business owners decide how points can be spent.
     content: () => {
       return <div><Loyalty /></div>
     },

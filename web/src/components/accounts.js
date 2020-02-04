@@ -44,6 +44,7 @@ const handleOnExit = () => {
 // handle the case when your user exits Link
 }
 
+
 const remove  = (id) => {
   dispatch(accountActions.removeAccount(user, id))
 }
