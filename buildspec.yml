@@ -21,9 +21,11 @@ phases:
 
   build:
     commands:
-      - pwd
-      - ls
-      - cd server 
+      - echo Starting build \u2318
+      - cd web
+      - npm run build
+      - mv build ../server/dist
+      - cd ../server
       - echo Build started on `date`
       - echo Building theDocker image...
       - docker build -t $REPOSITORY_URI:latest .
