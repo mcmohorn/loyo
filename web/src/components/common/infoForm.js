@@ -11,12 +11,12 @@ const InfoForm = () => {
 
   const dispatch = useDispatch();
   const classes = useStyles();
-  const [info, setInfo] = useState({});
   const { name, description } = useSelector(state => state.newBusiness);
+  const [info, setInfo] = useState({
+    name,
+    description
+  });
 
-  useEffect(() => {
-    setInfo({ name, description });
-  }, [name, description])
 
   const handleChange = (n, value) => {
     setInfo({ ...info, [n]: value });

@@ -60,7 +60,7 @@ const toggleForm = () => {
        </ListItem>);
      })
    }
-   <ListItem button key={`add_business_opt`} >
+   <ListItem button key={`add_business_opt`} onClick={() => { toggleForm()}} >
      <ListItemText primary={"Add Business"}/>
      <ListItemSecondaryAction>
                 <IconButton edge="end" aria-label="delete" onClick={() => {toggleForm()}}>

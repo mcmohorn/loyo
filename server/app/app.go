@@ -115,7 +115,7 @@ func (a *App) Delete(path string, f func(w http.ResponseWriter, r *http.Request)
 
 // Run the app on it's router
 func (a *App) Run(host string) {
-	fmt.Println("Listening on :) \u2318" + host) //
+	fmt.Println("Listening on :) \u2318 " + host) //
 	// TODO: toggle based on development environment
 	log.Fatal(http.ListenAndServe(host, utils.RequestLogger(a.Router)))
 	// log.Fatal(http.ListenAndServeTLS(host, "cert.pem", "key.pem", utils.RequestLogger(a.Router)))

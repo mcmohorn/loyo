@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
   },
 }));
-const steps = ['Info', 'Address', 'Rewards', 'Review'];
+const steps = ['Info', 'Locations', 'Rewards', 'Review'];
 
 function getStepContent(step) {
   switch (step) {

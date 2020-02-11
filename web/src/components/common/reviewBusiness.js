@@ -15,7 +15,10 @@ import {prettyDate} from '../../helpers/date-helper';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  
+    sectionHeader: {
+      fontWeight: 700,
+      'margin-top': '50px'
+    },
     table: {
       minWidth: 650,
     },
@@ -28,6 +31,7 @@ const ReviewNewBusiness = () => {
 
   const headerInfo = (
     <div>
+        <Typography className={classes.sectionHeader}>Basic Information</Typography>
         <Typography>{name}</Typography>
         <Typography>{description}</Typography>
     </div>
@@ -35,7 +39,7 @@ const ReviewNewBusiness = () => {
 
     const addressesTable = (
     <div>
-        <Typography>Locations</Typography>
+        <Typography className={classes.sectionHeader}>Locations</Typography>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -65,7 +69,7 @@ const ReviewNewBusiness = () => {
 
     const rewardsTable = (
         <div>
-            <Typography>Rewards</Typography>
+            <Typography className={classes.sectionHeader}>Rewards</Typography>
         <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>

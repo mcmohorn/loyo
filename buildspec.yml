@@ -26,6 +26,7 @@ phases:
       - npm run build
       - mv build ../server/dist
       - cd ../server
+      - perl -i -pe's/static/dist\/static/g' dist/index.html
       - echo Build started on `date`
       - echo Building theDocker image...
       - docker build -t $REPOSITORY_URI:latest .
