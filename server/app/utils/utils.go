@@ -54,7 +54,8 @@ func RequestLogger(targetMux http.Handler) http.Handler {
 		requesterIP := r.RemoteAddr
 
 		log.Printf(
-			"%s\t\t%s\t\t%s\t\t%v",
+			"%s %s\t\t%s\t\t%s\t\t%v",
+			"\u2318",
 			r.Method,
 			r.RequestURI,
 			requesterIP,

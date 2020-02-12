@@ -2,11 +2,13 @@ package app
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
 
 	"github.com/dgrijalva/jwt-go"
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/mcmohorn/loyo/server/app/data"
 	"github.com/mcmohorn/loyo/server/app/handler"
@@ -54,9 +56,23 @@ func (a *App) Initialize(config *config.Config) {
 
 }
 
+func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
+	// A very simple health check.
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	// In the future we could report back on the status of our DB, or our cache
+	// (e.g. Redis) by performing a simple PING, and include them in the response.
+	io.WriteString(w, `{"alive": true}`)
+}
+
 // setRouters sets the all required routers
 func (a *App) setRouters() {
-	// a.Router.HandleFunc("/", utils.LogHandler(utils.MessageHandler))
+
+	// health check
+	a.Router.HandleFunc("/health", HealthCheckHandler)
+
+	// api routes
 	api := a.Router.PathPrefix("/api/v1/").Subrouter()
 	api.HandleFunc("/user", a.handleAuthRequest(handler.GetProfile)).Methods("GET")
 	api.HandleFunc("/user", a.handleRequest(handler.CreateUser)).Methods("POST")
@@ -68,7 +84,6 @@ func (a *App) setRouters() {
 	api.HandleFunc("/business/{id}", a.handleAuthRequest(handler.UpdateBusiness)).Methods("PUT")
 	api.HandleFunc("/business/{id}", a.handleAuthRequest(handler.DeleteBusiness)).Methods("DELETE")
 	api.HandleFunc("/businesses", a.handleAuthRequest(handler.GetUserBusinesses)).Methods("GET")
-
 	api.HandleFunc("/redemption", a.handleAuthRequest(handler.CreateRedemption)).Methods("POST")
 	api.HandleFunc("/accounts", a.handleAuthRequest(handler.LinkAccount)).Methods("POST")
 	api.HandleFunc("/accounts", a.handleAuthRequest(handler.GetAccounts)).Methods("GET")
@@ -84,9 +99,8 @@ func (a *App) setRouters() {
 
 // IndexHandler serves the front end (via index.html)
 func IndexHandler(entrypoint string) func(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("sending index")
 	fn := func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("sending index inside")
+
 		http.ServeFile(w, r, entrypoint)
 	}
 
@@ -116,8 +130,10 @@ func (a *App) Delete(path string, f func(w http.ResponseWriter, r *http.Request)
 // Run the app on it's router
 func (a *App) Run(host string) {
 	fmt.Println("Listening on :) \u2318 " + host) //
+
+	loggedRouter := handlers.LoggingHandler(os.Stdout, utils.RequestLogger(a.Router))
 	// TODO: toggle based on development environment
-	log.Fatal(http.ListenAndServe(host, utils.RequestLogger(a.Router)))
+	log.Fatal(http.ListenAndServe(host, loggedRouter))
 	// log.Fatal(http.ListenAndServeTLS(host, "cert.pem", "key.pem", utils.RequestLogger(a.Router)))
 }
 

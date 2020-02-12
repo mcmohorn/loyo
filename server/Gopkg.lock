@@ -42,6 +42,14 @@
   version = "v1.1.1"
 
 [[projects]]
+  digest = "1:b117faf01abdbdadd7b8ceeae74cd1369c1b073fef41aee8b674c9d704a54c16"
+  name = "github.com/gorilla/handlers"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "8a3748addc242fc560bd6d4ff28b0374c010b1b4"
+  version = "v1.4.2"
+
+[[projects]]
   digest = "1:d5f97fc268267ec1b61c3453058c738246fc3e746f14b1ae25161513b7367b0c"
   name = "github.com/gorilla/mux"
   packages = ["."]
@@ -172,6 +180,7 @@
     "github.com/chebyrash/promise",
     "github.com/dgrijalva/jwt-go",
     "github.com/google/uuid",
+    "github.com/gorilla/handlers",
     "github.com/gorilla/mux",
     "github.com/mongodb/mongo-go-driver/bson",
     "github.com/plaid/plaid-go/plaid",
