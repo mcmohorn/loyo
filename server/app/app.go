@@ -129,7 +129,7 @@ func (a *App) Delete(path string, f func(w http.ResponseWriter, r *http.Request)
 
 // Run the app on it's router
 func (a *App) Run(host string) {
-	fmt.Println("Loyo is listening  at " + host) //
+	fmt.Println("Loyo is listening  at " + host + " \u2318")
 
 	loggedRouter := handlers.LoggingHandler(os.Stdout, utils.RequestLogger(a.Router))
 	// TODO: toggle based on development environment
