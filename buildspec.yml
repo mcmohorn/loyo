@@ -24,6 +24,7 @@ phases:
       - echo Starting build \u2318
       - cd web
       - npm install
+      - npm audit fix
       - npm run build
       - mv build ../server/dist
       - cd ../server
