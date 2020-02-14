@@ -16,16 +16,10 @@ import (
 
 // GetDB gets the db connection
 func GetDB(*config.DBConfig) (*mongo.Database, error) {
-	// dbURI := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=True",
-	// 	config.DB.Username,
-	// 	config.DB.Password,
-	// 	config.DB.Host,
-	// 	config.DB.Port,
-	// 	config.DB.Name,
-	// 	config.DB.Charset)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	uri := "mongodb://" + os.Getenv("MONGO_DB_USERNAME") + ":" + os.Getenv("MONGO_DB_PASSWORD") + "@" + os.Getenv("MONGO_DB_HOST") + ":27017"
-	fmt.Println(uri)
+	fmt.Println("Connecting to " + os.Getenv("MONGO_DB_USERNAME"))
+
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(uri))
 	if err != nil {
 		return nil, err

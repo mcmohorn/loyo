@@ -57,7 +57,6 @@ func (a *App) Initialize(config *config.Config) {
 }
 
 func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
-	// A very simple health check.
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
@@ -129,7 +128,7 @@ func (a *App) Delete(path string, f func(w http.ResponseWriter, r *http.Request)
 
 // Run the app on it's router
 func (a *App) Run(host string) {
-	fmt.Println("Loyo is listening  at " + host + " \u2318 ... ! Hey this just deployed")
+	fmt.Println("Loyo is listening  at " + host + " \u2318 ")
 
 	loggedRouter := handlers.LoggingHandler(os.Stdout, utils.RequestLogger(a.Router))
 	// TODO: toggle based on development environment
