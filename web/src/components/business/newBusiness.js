@@ -2,10 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import { Edit } from '@material-ui/icons';
 import {Button, Stepper, Step, StepLabel, CssBaseline} from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 
-import Typography from '@material-ui/core/Typography';
+import {Typography,
+  IconButton
+} from '@material-ui/core';
 import { businessActions } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -49,10 +52,13 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
   },
+  editButton: {
+    float: 'right'
+  }
 }));
 const steps = ['Info', 'Locations', 'Rewards', 'Review'];
 
-function getStepContent(step) {
+function getStepContent(step, fn) {
   switch (step) {
     case 0: 
       return <InfoForm />;
@@ -61,7 +67,7 @@ function getStepContent(step) {
     case 2:
       return <RewardsForm />;
     case 3:
-      return <ReviewNewBusiness />;
+      return <ReviewNewBusiness onEditPress={(i) => {fn(i)}}/>;
     default:
       throw new Error('Unknown step');
   }
@@ -75,7 +81,6 @@ const NewBusinessDialog = (props) => {
   const business = useSelector(state => state.newBusiness);
 
    const [activeStep, setActiveStep] = React.useState(0);
-
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -95,16 +100,28 @@ const NewBusinessDialog = (props) => {
   }
 
   return (
-    <Dialog fullWidth maxWidth="lg" onClose={handleClose} aria-labelledby="new-user-dialog" open={open}>
+    <Dialog fullWidth maxWidth="lg" onClose={handleClose} aria-labelledby="new-business-dialog" open={open}>
       
       <React.Fragment>
       <CssBaseline />
       
       <main className={classes.layout}>
         <div className={classes.paper}>
-          <Typography component="h1" variant="h4" align="center">
-            New Business
-          </Typography>
+          
+          <div className={classes.headerBox}>
+            {activeStep === 3 ? 
+              <IconButton className={classes.editButton} aria-label="delete" color="secondary" onClick={()=> setActiveStep(0)}>
+                  <Edit />
+              </IconButton>
+            : null
+            } 
+            <Typography component="h1" variant="h4" align="center">
+              {business.name ? business.name : 'New Business' }
+            </Typography>
+            <Typography component="h1" variant="body1" align="center">
+              {business.description ? business.description : '' }
+            </Typography>
+          </div>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map(label => (
               <Step key={label}>
@@ -125,7 +142,7 @@ const NewBusinessDialog = (props) => {
               </React.Fragment>
             ) : (
               <React.Fragment>
-                {getStepContent(activeStep)}
+                {getStepContent(activeStep, setActiveStep)}
                 <div className={classes.buttons}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} className={classes.button}>

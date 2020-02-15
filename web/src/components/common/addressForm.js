@@ -6,8 +6,12 @@ import {
   TableRow,
   TableBody,
   TableHead,
-  Button
+  Button,
+  IconButton
 } from '@material-ui/core';
+import {
+  Delete
+} from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 
@@ -19,6 +23,7 @@ const useStyles = makeStyles(theme => ({
   button: {
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
+    float: 'right',
   },
   table: {
     minWidth: 650,
@@ -35,6 +40,11 @@ const AddressForm = () => {
   const [addressList, setAddressList] = useState([]);
 
   useEffect(() => {
+    // address page loaded ? 
+    
+  }, []);
+
+  useEffect(() => {
     setAddressList(addresses);
   }, [addresses])
 
@@ -42,7 +52,20 @@ const AddressForm = () => {
     setAddress({ ...address, [n]: value });
   };
 
+
+  const handleRemove = (i) => {
+    addressList.splice(i, 1);
+    dispatch(newBusinessActions.setAddresses(addressList))
+    setAddressList([...addressList ]);
+  };
+
+  // TODO tie this to the reqiured elemetns in the field ( use form )
+  const isAddressInvalid = () => {
+    return !(address.address1 && address.city && address.state && address.country && address.zip)
+  }
+
   const handleAdd = () => {
+    setAddress({});
     addressList.push(address);
 
     setAddressList([...addressList]);
@@ -54,23 +77,27 @@ const AddressForm = () => {
     <Table className={classes.table} aria-label="simple table">
       <TableHead>
         <TableRow>
-          <TableCell>Addr 1</TableCell>
-          <TableCell>Addr 2</TableCell>
+          <TableCell>Street</TableCell>
           <TableCell>City</TableCell>
           <TableCell>State </TableCell>
           <TableCell>Zip</TableCell>
           <TableCell>Country</TableCell>
+          <TableCell></TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {addressList.map((row, i) => (
           <TableRow key={`address_${i}`}>
-            <TableCell >{row.address1}</TableCell>
-            <TableCell >{row.address2}</TableCell>
+            <TableCell >{row.address1} {row.address2}</TableCell>
             <TableCell >{row.city}</TableCell>
             <TableCell >{row.state}</TableCell>
             <TableCell >{row.zip}</TableCell>
             <TableCell >{row.country}</TableCell>
+            <TableCell > 
+              <IconButton aria-label="delete" color="secondary" onClick={()=> handleRemove(i)}>
+                <Delete />
+              </IconButton>  
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
@@ -84,35 +111,42 @@ const AddressForm = () => {
             required
             id="address1"
             name="address1"
-            label="Address line 1"
+            value={address.address1 || ''}
+            label="Street line 1"
             onChange={(e) => handleChange('address1', e.target.value)}
             fullWidth
-            autoComplete="billing address-line1"
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             id="address2"
             name="address2"
-            label="Address line 2"
+            label="Street line 2"
+            value={address.address2 || ''}
             onChange={(e) => handleChange('address2', e.target.value)}
             fullWidth
-            autoComplete="billing address-line2"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             required
+            value={address.city || ''}
             id="city"
             name="city"
             label="City"
             onChange={(e) => handleChange('city', e.target.value)}
             fullWidth
-            autoComplete="billing address-level2"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <TextField id="state" name="state" label="State/Province/Region" fullWidth onChange={(e) => handleChange('state', e.target.value)} />
+          <TextField
+            required
+            id="state" 
+            name="state" 
+            label="State/Province/Region" 
+            value={address.state || ''}
+            fullWidth onChange={(e) => handleChange('state', e.target.value)} 
+          />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
@@ -122,7 +156,7 @@ const AddressForm = () => {
             label="Zip / Postal code"
             onChange={(e) => handleChange('zip', e.target.value)}
             fullWidth
-            autoComplete="billing postal-code"
+            value={address.zip || ''}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -133,13 +167,18 @@ const AddressForm = () => {
             label="Country"
             onChange={(e) => handleChange('country', e.target.value)}
             fullWidth
-            autoComplete="billing country"
+            value={address.country || ''}
           />
         </Grid>
       </Grid>
-      <Button onClick={handleAdd} className={classes.button} color="secondary" variant="contained">
-        Add Address
-                </Button>
+      <Button 
+        onClick={handleAdd}
+        className={classes.button}
+        color="secondary"
+        disabled={isAddressInvalid()}
+        variant="contained">
+         Add Address
+      </Button>
       {addressesTable}
     </React.Fragment>
   );

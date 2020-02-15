@@ -14,7 +14,11 @@ import {
     TableBody,
     TableRow,
     Button,
+    IconButton
 } from '@material-ui/core';
+import {
+    Delete
+} from '@material-ui/icons'
 import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker
@@ -23,6 +27,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { newBusinessActions } from '../../actions';
 
 import {prettyDate} from '../../helpers/date-helper';
+
+const rewardExamples = ['15% Discount', 'Small Coffee', 'Free Side Item', 'Free Frosty Friday', 'Birthday Party Special'];
+// const notesExamples = ['Weekdays after 1pm', 'with $10 purchase', 'Every Friday', 'Toys are 25% off Saturdays before 4pm']
 
 const useStyles = makeStyles(theme => ({
     formControl: {
@@ -43,6 +50,9 @@ const useStyles = makeStyles(theme => ({
       table: {
         minWidth: 650,
       },
+      button: {
+          float: 'right'
+      }
 }));
 
 const initialState = {
@@ -54,7 +64,8 @@ const RewardsForm = () => {
     const classes = useStyles();
     const [reward, setReward] = useState(initialState);
     const { rewards } = useSelector(state => state.newBusiness);
-
+    const [nameIndex /*, setNameIndex */] = useState(0);
+    // const [descriptionIndex, setDescriptionIndex] = useState(0);
     const [rewardList, setRewardList] = useState([]);
 
     useEffect(() => {
@@ -71,10 +82,26 @@ const RewardsForm = () => {
         setRewardList([...rewardList]);
         
         dispatch(newBusinessActions.setRewards(rewardList));
+        setReward({});
     };
 
     
+  const handleRemove = (i) => {
+    rewardList.splice(i, 1);
+    setRewardList([...rewardList ]);
+    dispatch(newBusinessActions.setRewards(rewardList))
+  };
 
+   // TODO tie this to the reqiured elemetns in the field ( use form )
+   const isRewardInvalid = () => {
+    return !(reward.name && reward.effective && reward.cost)
+  }
+
+  /*
+  const anotherNameExampleTag = (
+    <span onClick={() => {setNameIndex(nameIndex+1 % rewardExamples.length)}}> See another </span>   
+  );
+    */
     const rewardsTable = (
         <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -84,6 +111,7 @@ const RewardsForm = () => {
             <TableCell>Effective</TableCell>
             <TableCell>Expires</TableCell>
             <TableCell>Points</TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -94,6 +122,11 @@ const RewardsForm = () => {
               <TableCell >{prettyDate(row.effective)}</TableCell>
               <TableCell >{prettyDate(row.expiration)}</TableCell>
               <TableCell >{row.cost}</TableCell>
+              <TableCell >
+                <IconButton aria-label="delete" color="secondary" onClick={()=> handleRemove(i)}>
+                    <Delete />
+                </IconButton> 
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -111,20 +144,22 @@ const RewardsForm = () => {
                     <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="name">Reward Name</InputLabel>
                         <Input
-                            id="name"
+                            id="newRewardName"
                             onChange={(e) => handleChange('name', e.target.value)}
                             InputLabelProps={{
                                 shrink: true,
                             }}
                         />
-                        <FormHelperText>e.g. 'Small Coffee'</FormHelperText>
+                        <FormHelperText>{`e.g. ${rewardExamples[nameIndex]}`} 
+                              
+                        </FormHelperText>
                     </FormControl>
                 </Grid>
                 <Grid item xs={8}>
                     <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="description">Notes (optional)</InputLabel>
+                    <InputLabel htmlFor="description">Notes</InputLabel>
                         <Input
-                            id="description"
+                            id="newRewardDescription"
                             onChange={(e) => handleChange('description', e.target.value)}
                             InputLabelProps={{
                                 shrink: true,
@@ -146,7 +181,7 @@ const RewardsForm = () => {
                                 margin="normal"
                                 id="effective"
                                 label="Effective Date"
-                                value={reward.effective}
+                                value={reward.effective || null}
                                 onChange={(v) => handleChange('effective', v.toISOString())}
                                 />
                         </FormControl>
@@ -162,7 +197,7 @@ const RewardsForm = () => {
                                 margin="normal"
                                 id="expiration"
                                 label="Expiration Date"
-                                value={reward.expiration}
+                                value={reward.expiration || null}
                                 onChange={(v) => handleChange('expiration', v.toISOString())}
                                 />
                         </FormControl>
@@ -184,7 +219,13 @@ const RewardsForm = () => {
                     </Grid>
                 </Grid>
                 
-                <Button onClick={handleAdd} className={classes.button} variant="contained" color="secondary">
+                <Button 
+                    onClick={handleAdd}
+                    className={classes.button}
+                    variant="contained"
+                    color="secondary"
+                    disabled={isRewardInvalid()}
+                >
                     Add Reward
                 </Button>
                 {rewardsTable}

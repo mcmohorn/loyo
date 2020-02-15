@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { newBusinessActions } from '../../actions';
@@ -36,8 +36,7 @@ const InfoForm = () => {
             onBlur={updateReduxInfo}
             required
             value={info.name}
-            id="name"
-            name="name"
+            id="newBusinessName"
             label="Business Name"
             fullWidth
           />
@@ -46,9 +45,8 @@ const InfoForm = () => {
           <TextField
             onChange={(e) => handleChange('description', e.target.value)}
             onBlur={updateReduxInfo}
-            id="description"
+            id="newBusinessDescription"
             value={info.description}
-            name="description"
             label="Description"
             fullWidth
           />
