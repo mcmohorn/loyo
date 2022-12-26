@@ -65,7 +65,7 @@ func CreateUser(db *mongo.Database, w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	RespondError(w, http.StatusBadRequest, "User Exists")
+	RespondError(w, http.StatusBadRequest, "User Exists + " + err.Error())
 	return
 
 }

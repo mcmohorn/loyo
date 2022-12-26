@@ -1,0 +1,110 @@
+{
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::361575806679:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "dnsSearchDomains": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "secretOptions": null,
+                "options": {
+                    "awslogs-group": "/ecs/first-run-task-definition",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "entryPoint": [],
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 9080
+                }
+            ],
+            "command": [],
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [
+                {
+                    "name": "PLAID_ENV",
+                    "value": "development"
+                },
+                {
+                    "name": "MONGO_DB_USERNAME",
+                    "value": "admin"
+                },
+                {
+                    "name": "PLAID_PRODUCTS",
+                    "value": "transactions"
+                },
+                {
+                    "name": "PLAID_COUNTRY_CODES",
+                    "value": "US,CA,GB,FR,ES"
+                },
+                {
+                    "name": "MONGO_DB_HOST",
+                    "value": "ec2-54-161-65-112.compute-1.amazonaws.com"
+                }
+            ],
+            "resourceRequirements": null,
+            "ulimits": null,
+            "dnsServers": null,
+            "mountPoints": [],
+            "workingDirectory": null,
+            "secrets": [
+                {
+                "name": "PLAID_CLIENT_ID",
+                "valueFrom": "arn:aws:secretsmanager:us-east-1:361575806679:secret:plaid-client-id-dev-Ff3kIm"
+              },
+              {
+                "name": "PLAID_SECRET",
+                "valueFrom": "arn:aws:secretsmanager:us-east-1:361575806679:secret:plaid-secret-dev-5CG8PI"
+              },
+              {
+                "name": "PLAID_PUBLIC_KEY",
+                "valueFrom": "arn:aws:secretsmanager:us-east-1:361575806679:secret:plaid-public-key-dev-uR1Toh"
+              },
+              {
+                "name": "MONGO_DB_PASSWORD",
+                "valueFrom": "arn:aws:secretsmanager:us-east-1:361575806679:secret:mongo-db-password-dev-L50kZi"
+              }
+            ],
+            "dockerSecurityOptions": null,
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "361575806679.dkr.ecr.us-east-1.amazonaws.com/loyo-repository",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": [],
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "loyo-app"
+        }
+    ],
+    "memory": "512",
+    "taskRoleArn": "arn:aws:iam::361575806679:role/ecsTaskExecutionRole",
+    "family": "first-run-task-definition",
+    "pidMode": null,
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "inferenceAccelerators": [],
+    "proxyConfiguration": null,
+    "volumes": [],
+    "tags": []
+}

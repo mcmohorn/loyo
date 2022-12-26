@@ -67,7 +67,7 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusBadRequest)
-	w.Write([]byte("User exists"))
+	w.Write([]byte("Error Registering User:" + err.Error()))
 	return
 }
 

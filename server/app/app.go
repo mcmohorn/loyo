@@ -30,10 +30,10 @@ type App struct {
 // Initialize initializes the app with predefined configuration
 func (a *App) Initialize(config *config.Config) {
 
-	// get mongo client connected
+	// establish a database connection
 	db, err := db.GetDB(config.DB)
 	if err != nil {
-		log.Fatal("Could not connect database")
+		log.Fatal("Error connecting to database " + err.Error())
 	}
 
 	// get plaid client connected
