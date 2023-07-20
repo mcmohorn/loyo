@@ -1,0 +1,10 @@
+{ 
+    "extends": 
+    [
+        "eslint:recommended"
+    ],
+    "rules": {
+        "no-unused-vars": "off",
+        "no-case-declarations": "off"
+    }
+}

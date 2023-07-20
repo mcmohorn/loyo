@@ -36,7 +36,7 @@ func (a *App) Initialize(config *config.Config) {
 		log.Fatal("Error connecting to database " + err.Error())
 	}
 
-	// get plaid client connected
+	// establish plaid client connection
 	opts := plaid.ClientOptions{
 		os.Getenv("PLAID_CLIENT_ID"),
 		os.Getenv("PLAID_SECRET"),
@@ -44,6 +44,7 @@ func (a *App) Initialize(config *config.Config) {
 		plaid.Development, // Available environments are Sandbox, Development, and Production
 		&http.Client{},    // This parameter is optional
 	}
+
 	client, err := plaid.NewClient(opts)
 	if err != nil {
 		log.Fatal(err)

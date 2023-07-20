@@ -8,11 +8,11 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/mcmohorn/loyo/server/app/data"
 	"github.com/mcmohorn/loyo/server/config/db"
-	"github.com/mcmohorn/loyo/server/data"
 
 	jwt "github.com/dgrijalva/jwt-go"
-	"github.com/mongodb/mongo-go-driver/bson"
+	"go.mongodb.org/mongo-driver/bson"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -29,7 +29,7 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	collection, err := db.GetDBCollection()
+	collection, err := db.GetDBCollection("Users")
 
 	if err != nil {
 		res.Error = err.Error()
@@ -81,7 +81,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-	collection, err := db.GetDBCollection()
+	collection, err := db.GetDBCollection("Users")
 
 	if err != nil {
 		log.Fatal(err)

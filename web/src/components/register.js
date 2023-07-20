@@ -64,7 +64,7 @@ const Register = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        setSubmitted(true);
+        // setSubmitted(true);
 
         if (username && password && name) {
           dispatch(userActions.register({ name, username, password}));
@@ -135,7 +135,7 @@ const Register = (props) => {
               color="primary"
               className={classes.submit}
               onClick={handleSubmit}
-              disabled={submitted}
+              disabled={submitted} 
             >
               Create Account
             </Button>

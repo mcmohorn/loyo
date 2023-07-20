@@ -22,6 +22,7 @@ var nameLength = []int{1, 50}
 // CreateUser is the service to create a new user
 func CreateUser(db *mongo.Database, w http.ResponseWriter, r *http.Request) {
 	user := data.User{}
+	result := data.User{}
 	decoder := json.NewDecoder(r.Body)
 
 	if err := decoder.Decode(&user); err != nil {
@@ -44,8 +45,8 @@ func CreateUser(db *mongo.Database, w http.ResponseWriter, r *http.Request) {
 	}
 
 	collection := db.Collection("Users")
-	var result data.User
-	err := collection.FindOne(context.TODO(), bson.D{primitive.E{Key: "email", Value: user.Email}}).Decode(&result)
+	frame := bson.D{primitive.E{Key: "email", Value: user.Email}}
+	err := db.Collection("Users").FindOne(context.TODO(), frame ).Decode(&result)
 	if err != nil {
 		if err.Error() == "mongo: no documents in result" {
 			hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), 5)

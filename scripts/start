@@ -1,0 +1,5 @@
+db.createUser( { user: "loyo-api", pwd: "", roles: [ "readWrite", "dbAdmin" ] } )
+
+db.createCollection('Businesses')
+
+db.Businesses.createIndex({name: 'text'})
